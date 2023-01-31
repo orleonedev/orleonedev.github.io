@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="newstyle.css">
         <!-- =====BOX ICONS===== -->
         <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+        <!-- =====Font Awesome====-->
+        <script src="https://kit.fontawesome.com/63a3974e1e.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -36,7 +38,7 @@
             <a href="#articles" class="nav-link articles">Articles</a>
           </li>
           <li class="nav-item">
-            <a href="#contacts" class="nav-link contact">Contacts</a>
+            <a href="#contacts" class="nav-link contacts">Contacts</a>
           </li>
         </ul>
       </div>
@@ -52,13 +54,10 @@
     <!--===== HOME =====-->
     <section class="home bd-grid section" id="home">
       <div class="home-data">
-        <h2 class="home-title">
-          Hi 👋,<br />I'm <span class="home-title-color">Oreste Leone</span><br />
-         <span class="home-subtitle" id="jobTitle" >Software and Game Developer👾</span> 
-        </h2>
-
-        <a href="" target="_blank"
-          class="button">Resume</a>
+        <h1 class="home-title">
+          Hi 👋, I'm <span class="home-title-color">Oreste Leone</span>
+         <span class="home-subtitle" id="jobTitle" ><br>Software and<br>Game Developer</span> 
+        </h1>
 
       </div>
 
@@ -67,20 +66,231 @@
             class="bx bxl-linkedin"></i></a>
         <a href="https://github.com/orleonedev" target="_blank" class="home-social-icon"><i
             class="bx bxl-github"></i></a>
+        <a href="https://medium.com/@orleone.dev" target="_blank" class="home-social-icon"><i 
+          class="fa-brands fa-medium"></i></a>
+
+
       </div>
 
       <div class="home-img">
-        <img src="assets/img/profile.gif" alt="" />
+        <img src="/assets/img/ProfilePic500.png" alt="" />
       </div>
+
+    </section>
+
+    <!--===== ABOUT =====-->
+    <section class="about section" id="about">
+      <h1 class="section-title">About</h1>
+
+      <div class="about-container bd-grid">
+        <div class="about-img">
+          <img src="assets/img/ProfilePic500.png" alt="" />
+        </div>
+
+        <div class="about-text">
+          
+          <p>
+            I'm a <span>Computer Science</span> student with a strong passion for the videogames industry which led me to start my Game Development career. 
+            <br>As <span>Game Designer</span> for Lapse Games since 2017, I helped my team deliver two chapters of the <span>Lapse Games Trilogy</span>, 
+            reaching more than 12 million downloads across Google Play Store and Apple App Store. 
+            <br>I'm also a <span>Game Programmer</span> working with <span>Unity</span> and <span>Unreal Engine</span>. 
+            <br><br>While graduating from the <span>Apple Developer Academy</span>, I have developed expertise in Apple's Platforms and 
+            Frameworks with a particular focus on delivering games using <span>SpriteKit</span> and <span>GameplayKit</span>. 
+            I'm enrolled in the Pier Program, a second-year experience at the Apple Developer Academy based 
+            on a real-world working environment, developing a full <span>SwiftUI macOS app</span> for the <span>mark</span> project, a global pedagogical 
+            tool created around Challenge Based Learning at the Apple Developer Academy @UNINA FEDERICO II in Naples 
+            for the Academies. <br><br>
+            
+          </p>
+          
+          <p>
+            I also offer consultation services as Game Developer and Designer, feel free to reach me!
+          </p>
+
+        </div>
+
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+          <p class="tab-links" onclick="opentab('awards')">Awards & Certificates</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+        <ul>
+            <li><span>Languages</span><br>Swift • C • C++ • C# • Kotlin • Java • SQL</li>
+            <li><span>Frameworks & Engines</span><br>SwiftUI • SpriteKit • GameplayKit • Unity • UnrealEngine</li>
+            <li><span>Other</span><br>Git Workflows • Software Engineering • Game Development • Apple Platforms Development • Agile Methodologies</li>
+        </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>2022 - Present</span><br>Game Programmer freelancer</li>
+            <li><span>2017 - Present</span><br>Game Designer @ Lapse Games • Lapse: A Forgotten Future, Lapse 2: Before Zero, Lapse 3[TBA]</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>June 2022 - Present</span><br>Pier Student @Apple Developer Academy of Naples • Developer for the "mark" project.</li>
+            <li><span>Sept 2021 - June 2022</span><br>Student - Apple Developer Academy @UNINA • iOS Mobile App and Games Development.</li>
+            <li><span>2015 - Present</span><br>Computer Science Bachelor @UNINA Federico II</li>
+            <li><span>2010 - 2015</span><br>High School Diploma in scientific studies @Liceo Scientifico F.Sbordone Napoli</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="awards">
+          <ul>
+            <li><span>Sept 2022</span><br>Apple Teacher & Apple Teacher Playground Certificates</li>
+            <li><span>June 2022</span><br>Apple WWDC2022 Swift Student Challenge Winner Award</li>
+            <li><span>Jul 2014</span><br>Cambridge English Level B1 (FCE) Certificate</li>
+
+          </ul>
+        </div>
+        <a href="/assets/pdf/OresteLeone_OLD.pdf" target="_blank"
+          class="button-resume">Resume</a>
+      </div>
+    </section>
+
+    <!--===== PORTFOLIO =====-->
+    <section class="portfolio section" id="portfolio">
+      
+          <h1 class="section-title">Relevant Projects</h1>
+          
+          <div class="portfolio-container bd-grid">
+
+            <div class="work-list">
+
+              <div class="work">
+                  <img src="assets/img/lapseboth.png" alt="">
+                  <div class="layer">
+                      <h3>Lapse Trilogy</h3>
+                      <p>Lapse: A Forgotten Future, Lapse 2: Before Zero, Lapse 3 [TBD]</p>
+                      <a href="https://linktr.ee/lapsegames" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </div>
+                </div>
+
+              <div class="work">
+                <img src="assets/img/WP.png" alt="">
+                <div class="layer">
+                    <h3>WillPower - Magello Battle</h3>
+                    <p>An iOS Arcade Game made during a 3 days Game Jam with SpriteKit and GameplayKit</p>
+                    <div class="layer-row">
+                      <a href="https://apps.apple.com/it/app/willpower-magello-battle/id1615802592?l=en" target="_blank"><i class="fa-brands fa-app-store"></i></a>
+                      <a href="https://github.com/orleonedev/WillPower" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    
+                </div>
+              </div>
+
+              <div class="work">
+                <img src="assets/img/ColorMadness.png" alt="">
+                <div class="layer">
+                  <h3>Color Madness</h3>
+                  <p>A "Simon-says" game made in just 16 hours during a Game Jam with SpriteKit and GameplayKit</p>
+                  <div class="layer-row">
+                    <a href="https://testflight.apple.com/join/Hl8vOu5i" target="_blank"><i class="fa-brands fa-app-store"></i></a>
+                    <a href="https://github.com/orleonedev/TheMangoMadness" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="work">
+                <img src="assets/img/RDO.png" alt="">
+                <div class="layer">
+                  <h3>Reaper's Day Off</h3>
+                  <p>An iOS and iPadOS game made with SpriteKit and GameplayKit</p>
+                  <div class="layer-row">
+                    <a href="https://apps.apple.com/it/app/reapers-day-off/id1622800202?l=en" target="_blank"><i class="fa-brands fa-app-store"></i></a>
+                    <a href="https://github.com/orleonedev/ReapersDayOff" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="work">
+                <img src="assets/img/holder.png" alt="">
+                <div class="layer">
+                  <h3>Holder</h3>
+                  <p>Freelance commission.<br>A cross platform app that helps professionals analyze and take track of the mental health status of Alzhaimer's desease through games.<br>Made with Unity and C#</p>
+                  
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+
+
+          
+          <a href="https://github.com/orleonedev" target="_blank" class="button">See more</a>
+      
+    </section>
+
+    <!-- ==== ARTICLES ==== -->
+    <section class="articles section" id="articles">
+
+      <h1 class="section-title">Articles</h1>
+
+      <div class="articles-container bd-grid">
+
+        <div class="articles-list">
+          <div>
+              <a href="https://medium.com/better-programming/design-patterns-for-games-state-pattern-97519e0b9165" target="_blank">
+              <i class="fa-brands fa-medium"></i>
+              <h2>Design Pattern for Games: State Pattern</h2>
+              <p>Explore one of the most used Design Patterns in game development<br><br>Published on Better Programming</p>
+          </a>
+          </div>
+          <div>
+              <a href="https://medium.com/better-programming/make-it-structured-gameplaykit-6d7e79d5a44a" target="_blank">
+              <i class="fa-brands fa-medium"></i>
+              <h2>Make it structured: GameplayKit</h2>
+              <p>How to use GameplayKit for your iOS Arcade game<br><br>Published on Better Programming</p>
+              </a>
+          </div>
+          
+        </div>
+      </div>
+
+      <a href="https://medium.com/@orleone.dev" target="_blank" class="button">See more</a>
     </section>
 
   </main>
 
-  <footer>
+  <footer class="footer section" id="contacts">
+    <h2 class="section-title">Contacts</h2>
+    <p class="footer-title">Oreste Leone</p>
+    <div class="footer-social">
+
+      <a href="https://www.linkedin.com/in/orleonedev" target="_blank" class="footer-icon">
+        <i class="bx bxl-linkedin"></i></a>
+
+      <a href="https://github.com/orleonedev" target="_blank" class="footer-icon">
+        <i class="bx bxl-github"></i></a>
+
+      <a href="https://medium.com/@orleone.dev" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-medium"></i></a>
+
+      <a href="https://instagram.com/orleonx_dev" target="_blank" class="footer-icon">
+        <i class="bx bxl-instagram-alt"></i></a>
+
+      <a href="http://twitter.com/orleonx_dev" target="_blank" class="footer-icon">
+        <i class="bx bxl-twitter"></i></a>
+
+      <a href="mailto:orleone.dev@gmail.com" target="_blank" class="footer-icon">
+        <i class="bx bxs-envelope"></i></a>
+
+      <a href="discord:OresteLeone#1681" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-discord"></i></a>
+
+      <a href="https://twitch.tv/orleonx_dev" target="_blank" class="footer-icon">
+        <i class="bx bxl-twitch"></i></a>
+
+      
+    </div>
+
+    <p></p>
 
 
   </footer>
         
-        <script src="" async defer></script>
+  <script src="assets/js/main.js"></script>
     </body>
 </html>
