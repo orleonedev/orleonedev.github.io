@@ -248,7 +248,7 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 55%;
+  width: 45%;
 }
 
 /*BUTTONS*/
@@ -584,7 +584,7 @@ section.articles {
     margin-right: var(--mb-4);
   }
   .home-img {
-    width: 39%;
+    width: 30%;
     max-width: 420px;
     bottom: 15%;
   }
