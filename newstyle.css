@@ -426,6 +426,7 @@ section.portfolio {
 }
 
 .layer-row{
+  margin: 2vh;
   flex-direction: row;
   display: flex;
   gap: 2vw;
@@ -438,14 +439,13 @@ section.portfolio {
 }
 
 .layer a{
-  margin-top: 20px;
-  color: var(--first-color);
+  
+  color: var(--third-color);
   text-decoration: none;
-  font-size: xx-large;
-  line-height: 60px;
-  background: #fff;
-  width: 60px;
-  height: 60px;
+  font-size: 4vh;
+  line-height: 7vh;
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
   text-align: center;
 }
@@ -644,3 +644,52 @@ section.articles {
     margin-right: 20px;
 }
 }
+
+@media screen and (max-width: 569px) {
+
+  .layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), var(--first-color));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 4vw;
+    transition: height 0.5s ;
+  }
+  
+  .layer-row{
+    margin: 3vh;
+    flex-direction: row;
+    display: flex;
+    gap: 2vw;
+  }
+  
+  .layer h3{
+    font-weight: 600;
+    font-size: 8vw;
+    margin-bottom: 1vh;
+  }
+
+  .layer a{
+  
+    color: var(--third-color);
+    text-decoration: none;
+    font-size: 10vw;
+    line-height: 12vw;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    text-align: center;
+  }
+}
+
+
