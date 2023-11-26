@@ -419,7 +419,7 @@ section.portfolio {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0.1 rem;
   text-align: center;
   font-size: 14px;
   transition: height 0.5s ;
