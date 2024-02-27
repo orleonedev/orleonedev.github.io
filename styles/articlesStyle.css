@@ -23,13 +23,13 @@ section.articles {
   
   .articles-list div{
     background: #313131;
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
     padding: 24px;
     font-size: 1rem;
     border-radius: 10px;
     text-align: center;
     transition: background 0.5s, transform 0.5s;
-    width: calc(50% - 50px);
+    width: calc(100% - 50px);
   }
 
   .articles-list div i{
@@ -58,3 +58,12 @@ section.articles {
     transform: translateY(-10px);
   }
 
+@media screen and (min-width: 768px) {
+    .articles-container {
+        align-items: center;
+    }
+    .articles-list div{
+        width: calc(50% - 50px);
+    }
+    
+}

@@ -141,7 +141,7 @@ img {
   .button:hover {
     background-color: var(--first-color);
     color: var(--third-color);
-    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
     scale: 1.1;
   }
@@ -161,7 +161,7 @@ img {
   .button-resume:hover {
     background-color: var(--first-color);
     color: var(--third-color);
-    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
     scale: 1.1;
   }

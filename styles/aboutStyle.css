@@ -34,10 +34,11 @@ section.about {
   
   .tab-container {
     background: #313131;
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 16px;
     gap: 1rem;
+    margin-bottom: 2rem;
   }
   
   

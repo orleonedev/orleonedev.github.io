@@ -6,7 +6,7 @@
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--second-color);
-    box-shadow: 0 1px 4px rgba(176, 154, 146, 0.15);
+    box-shadow: 0 1px 8px rgba(176, 154, 146, 0.25);
   }
   
   /*===== NAV =====*/

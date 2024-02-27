@@ -44,7 +44,7 @@ section.portfolio {
     font-size: 1rem;
     width: 100%;
     overflow: hidden;
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
   }
 
   .work-card .image-container {
