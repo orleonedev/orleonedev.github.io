@@ -1,0 +1,192 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 500;
+}
+
+/*===== Colores =====*/
+:root {
+  --first-color: #f49740;
+  --second-color: #212121;
+  --third-color: #f2f2f2;
+  --fourth-color: #bd4f4f;
+}
+
+/*===== Fuente y tipografia =====*/
+:root {
+  /* --body-font: "Poppins", sans-serif; */
+  --body-font: 'Share Tech', sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.98rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1.2rem;
+  }
+}
+
+/*===== Margenes =====*/
+:root {
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+/*===== z index =====*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--second-color);
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--third-color);
+    line-height: 1.3;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/*===== CLASS CSS ===== */
+.section-title {
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-4);
+    text-align: center;
+  }
+  .section-title::after {
+    position: absolute;
+    content: "";
+    width: 64px;
+    height: 0.18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);
+  }
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  
+  /*===== LAYOUT =====*/
+  .bd-grid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+    align-content: center;
+  }
+
+   /*BUTTONS*/
+   .button {
+    display: inline-block;
+    background-color: var(--second-color);
+    border: 1px solid var(--first-color);
+    color: var(--third-color);
+    padding: 0.75rem 4rem;
+    font-weight: var(--font-semi);
+    border-radius: 0.5rem;
+    transition: 0.5s;
+  }
+  .button:hover {
+    background-color: var(--first-color);
+    color: var(--third-color);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+    scale: 1.1;
+  }
+
+  .button-resume {
+    display: block;
+    width: fit-content;
+    background-color: var(--second-color);
+    border: 1px solid var(--first-color);
+    padding: 0.75rem 4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--third-color);
+    transition: 0.5s;
+  }
+  
+  .button-resume:hover {
+    background-color: var(--first-color);
+    color: var(--third-color);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+    scale: 1.1;
+  }
+  
+
+@media screen and (min-width: 768px) {
+    body {
+      margin: 0;
+    }
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+    }
+    .section-title {
+      margin-bottom: var(--mb-6);
+    }
+    .section-title::after {
+      width: 80px;
+      top: 3rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .bd-grid {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
