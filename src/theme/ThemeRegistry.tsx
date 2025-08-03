@@ -43,63 +43,119 @@ const getDesignTokens = (): ThemeOptions => ({
   components: {
     MuiButton: {
       styleOverrides: {
-        // Flat contained buttons for a minimal look
+        outlined: ({ theme }) => ({
+          '&:hover': {
+            color: theme.palette.primary.main,
+            backgroundColor: 'rgba(212, 157, 58, 0.1)',
+            borderColor: theme.palette.primary.main,
+          },
+        }),
         containedPrimary: {
+          boxShadow: 'none',
+          '&:hover': {
             boxShadow: 'none',
-            '&:hover': {
-                boxShadow: 'none',
-            }
+            backgroundColor: 'rgba(212, 157, 58, 0.9)',
+          },
         },
-        containedSecondary: {
-            boxShadow: 'none',
-            '&:hover': {
-                boxShadow: 'none',
-            }
-        }
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.text.primary,
+          '&:hover': {
+            color: theme.palette.primary.main,
+            backgroundColor: 'rgba(212, 157, 58, 0.1)',
+          },
+        }),
+      },
+    },
+    MuiCardActionArea: {
+      styleOverrides: {
+        root: {
+          transition: 'transform 0.3s, background-color 0.3s',
+          '&:hover': {
+            backgroundColor: 'rgba(212, 157, 58, 0.05)',
+            '.MuiCardActionArea-focusHighlight': {
+              opacity: 0,
+            },
+          },
+        },
+        focusHighlight: {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.text.primary,
+          textDecoration: 'none',
+          '&:hover': {
+            color: theme.palette.primary.main,
+          },
+        }),
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            color: '#D49D3A',
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: '#D49D3A',
+        },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: ({ theme }) => ({
           boxShadow: 'none',
-          // Use a semi-opaque background color from the palette for a more solid look
-          backgroundColor: 'rgba(22, 27, 34, 0.85)', // #161B22 with 85% opacity
-          backdropFilter: 'blur(8px)', // The blur effect remains
+          backgroundColor: 'rgba(28, 32, 38, 0.85)',
+          backdropFilter: 'blur(8px)',
           borderBottom: '1px solid',
           borderColor: theme.palette.divider,
         }),
       },
     },
     MuiPaper: {
-        styleOverrides: {
-            root: {
-                boxShadow: 'none',
-                backgroundImage: 'none', // Ensure no gradient from MUI
-            }
-        }
+      styleOverrides: {
+        root: {
+          boxShadow: 'none',
+          backgroundImage: 'none',
+        },
+      },
     },
     MuiCard: {
-        styleOverrides: {
-            root: ({ theme }) => ({
-                boxShadow: 'none',
-                border: '1px solid',
-                borderColor: theme.palette.divider,
-            })
-        }
+      styleOverrides: {
+        root: ({ theme }) => ({
+          boxShadow: 'none',
+          border: '1px solid',
+          borderColor: theme.palette.divider,
+        }),
+      },
     },
     MuiOutlinedInput: {
-        styleOverrides: {
-            root: ({ theme }) => ({
-                // Modern input field style
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: theme.palette.primary.main,
-                },
-            }),
-            notchedOutline: ({ theme }) => ({
-                borderColor: theme.palette.divider,
-            }),
-        }
-    }
+      styleOverrides: {
+        root: ({ theme }) => ({
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+        }),
+        notchedOutline: ({ theme }) => ({
+          borderColor: theme.palette.divider,
+        }),
+      },
+    },
   },
 });
 
