@@ -16,7 +16,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <Box id="about" sx={{ p: 4, my: 8 }}>
+    <Box id="about" sx={{ p: 4, my: 32 }}>
       <Typography variant="h4" component="h2" align="center" gutterBottom>
         About Me
       </Typography>
@@ -36,7 +36,7 @@ const About: React.FC = () => {
             <Tab label="Education" />
             <Tab label="Awards" />
           </Tabs>
-          <Box sx={{ p: 3, minHeight: 250, overflowY: 'auto' }}>
+          <Box sx={{ p: 3, height: 512, overflowY: 'auto' }}>
             {tabIndex === 0 && <MultilineHighlightedTypography
               text={aboutText}
               highlightPhrases={aboutHighlightedText}

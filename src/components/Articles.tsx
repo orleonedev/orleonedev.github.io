@@ -28,7 +28,7 @@ const ArticleCard: React.FC<{ article: Article }> = ({ article }) => {
 
 const Articles: React.FC = () => {
   return (
-    <Box id="articles" sx={{ p: 4, my: 8 }}>
+    <Box id="articles" sx={{ p: 4, my: 32 }}>
       <Typography variant="h4" component="h2" align="center" gutterBottom>
         Articles
       </Typography>

@@ -5,7 +5,7 @@ import { FaMedium, FaInstagram, FaTwitter, FaDiscord, FaTwitch } from 'react-ico
 
 const Contact: React.FC = () => {
   return (
-    <Box id="contact" sx={{ p: 4, my: 8, backgroundColor: 'background.paper' }}>
+    <Box id="contact" sx={{ p: 4, my: 32, backgroundColor: 'background.paper' }}>
       <Container maxWidth="sm">
         <Typography variant="h4" component="h2" align="center" gutterBottom>
           Contact Me

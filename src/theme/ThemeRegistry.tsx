@@ -43,6 +43,12 @@ const getDesignTokens = (): ThemeOptions => ({
   components: {
     MuiButton: {
       styleOverrides: {
+        root: {
+          '&.Mui-focusVisible': {
+            outline: '2px solid #D49D3A',
+            outlineOffset: '2px',
+          },
+        },
         outlined: ({ theme }) => ({
           '&:hover': {
             color: theme.palette.primary.main,
@@ -67,6 +73,10 @@ const getDesignTokens = (): ThemeOptions => ({
             color: theme.palette.primary.main,
             backgroundColor: 'rgba(212, 157, 58, 0.1)',
           },
+          '&.Mui-focusVisible': {
+            outline: '2px solid #D49D3A',
+            outlineOffset: '2px',
+          },
         }),
       },
     },
@@ -78,6 +88,12 @@ const getDesignTokens = (): ThemeOptions => ({
             backgroundColor: 'rgba(212, 157, 58, 0.05)',
             '.MuiCardActionArea-focusHighlight': {
               opacity: 0,
+            },
+          },
+          '&.Mui-focusVisible': {
+            '.MuiCardActionArea-focusHighlight': {
+              opacity: 0.1,
+              backgroundColor: '#D49D3A',
             },
           },
         },
@@ -102,6 +118,11 @@ const getDesignTokens = (): ThemeOptions => ({
         root: {
           '&.Mui-selected': {
             color: '#D49D3A',
+          },
+          '&.Mui-focusVisible': {
+            outline: 'none',
+            backgroundColor: 'rgba(212, 157, 58, 0.2)',
+            borderRadius: '8px',
           },
         },
       },
