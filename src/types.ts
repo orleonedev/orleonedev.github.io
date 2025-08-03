@@ -28,3 +28,8 @@ export interface Article {
   url: string;
   imageUrl: string;
 }
+
+export interface Award {
+  date: string;
+  title: string;
+}

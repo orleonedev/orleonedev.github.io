@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, Container, IconButton, TextField, Typography } from '@mui/material';
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { FaMedium, FaInstagram, FaTwitter, FaDiscord, FaTwitch } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   return (
@@ -12,15 +13,30 @@ const Contact: React.FC = () => {
         <Typography align="center" sx={{ mb: 4 }}>
           Have a question or want to work together? Feel free to reach out.
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
-          <IconButton href="mailto:oreste.leone@dev.com">
+        <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', mb: 4 }}>
+          <IconButton href="mailto:orleone.dev@gmail.com">
             <Email />
           </IconButton>
           <IconButton href="https://github.com/orleonedev" target="_blank">
             <GitHub />
           </IconButton>
-          <IconButton href="https://linkedin.com/in/oreste-leone" target="_blank">
+          <IconButton href="https://www.linkedin.com/in/orleonedev" target="_blank">
             <LinkedIn />
+          </IconButton>
+          <IconButton href="https://medium.com/@orleone.dev" target="_blank">
+            <FaMedium />
+          </IconButton>
+          <IconButton href="https://instagram.com/orleonx_dev" target="_blank">
+            <FaInstagram />
+          </IconButton>
+          <IconButton href="http://twitter.com/orleonx_dev" target="_blank">
+            <FaTwitter />
+          </IconButton>
+          <IconButton href="discord:OresteLeone#1681" target="_blank">
+            <FaDiscord />
+          </IconButton>
+          <IconButton href="https://twitch.tv/orleonx_dev" target="_blank">
+            <FaTwitch />
           </IconButton>
         </Box>
         <Box component="form" noValidate autoComplete="off">
