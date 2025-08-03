@@ -4,6 +4,9 @@ import { experiences } from '../data/experience';
 import { skills } from '../data/skills';
 import { education } from '../data/education';
 import { awards } from '../data/awards';
+import { aboutHighlightedText, aboutText } from '../data/about';
+import { MultilineHighlightedTypography } from './MultilineHighlightedTypography';
+
 
 const About: React.FC = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -22,7 +25,7 @@ const About: React.FC = () => {
           <Avatar
             alt="Oreste Leone"
             src="/oldPortfolioFiles/assets/img/ProfileSquaredMedium.png"
-            sx={{ width: 200, height: 200 }}
+            sx={{ width: 320, height: 320 }}
           />
         </Grid>
         <Grid size={{ xs: 12, md: 8 }}>
@@ -34,7 +37,12 @@ const About: React.FC = () => {
             <Tab label="Awards" />
           </Tabs>
           <Box sx={{ p: 3, minHeight: 250, overflowY: 'auto' }}>
-            {tabIndex === 0 && <Typography>Hello, I’m Oreste Leone, an iOS Engineer and Game Developer with a background in Computer Science at the University of Naples Federico II, based in Naples, Italy. I have hands-on experience as a Unity Developer and Game Designer, and I'm a proud member of Lapse Games, where our titles have reached over 15 million downloads. I'm also an Apple Developer Academy alumnus and a two-time WWDC Swift Student Challenge winner. I’m passionate about creating intuitive apps, immersive games, and mentoring others in the developer community.</Typography>}
+            {tabIndex === 0 && <MultilineHighlightedTypography
+              text={aboutText}
+              highlightPhrases={aboutHighlightedText}
+              highlightColor='primary.main'
+              variant="body1"
+            />}
             {tabIndex === 1 && (
               <Box>
                 {experiences.map((exp, index) => (
@@ -53,7 +61,7 @@ const About: React.FC = () => {
               </Box>
             )}
             {tabIndex === 3 && (
-                <Box>
+              <Box>
                 {education.map((edu, index) => (
                   <Box key={index} sx={{ mb: 2 }}>
                     <Typography variant="h6">{edu.role} at {edu.company}</Typography>
@@ -63,7 +71,7 @@ const About: React.FC = () => {
               </Box>
             )}
             {tabIndex === 4 && (
-                <Box>
+              <Box>
                 {awards.map((award, index) => (
                   <Box key={index} sx={{ mb: 2 }}>
                     <Typography variant="h6">{award.title}</Typography>
