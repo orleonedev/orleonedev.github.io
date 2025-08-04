@@ -17,7 +17,7 @@ const About: React.FC = () => {
 
   return (
     <Box id="about" sx={{ p: 4, my: 32 }}>
-      <Typography variant="h4" component="h2" align="center" gutterBottom>
+      <Typography variant="h4" component="h2" align="center" gutterBottom sx={{ mb: 4 }}>
         About Me
       </Typography>
       <Grid container spacing={4} alignItems="center">
@@ -47,8 +47,9 @@ const About: React.FC = () => {
               <Box>
                 {experiences.map((exp, index) => (
                   <Box key={index} sx={{ mb: 2 }}>
-                    <Typography variant="h6">{exp.role} at {exp.company}</Typography>
+                    <Typography variant="h6" color='primary.main'>{exp.role} @ {exp.company}</Typography>
                     <Typography variant="subtitle2" color="text.secondary">{exp.duration}</Typography>
+                    <Typography variant="body2">{exp.description}</Typography>
                   </Box>
                 ))}
               </Box>
@@ -64,8 +65,9 @@ const About: React.FC = () => {
               <Box>
                 {education.map((edu, index) => (
                   <Box key={index} sx={{ mb: 2 }}>
-                    <Typography variant="h6">{edu.role} at {edu.company}</Typography>
+                    <Typography variant="h6" color='primary.main'>{edu.role} @ {edu.company}</Typography>
                     <Typography variant="subtitle2" color="text.secondary">{edu.duration}</Typography>
+                    <Typography variant="body2">{edu.description}</Typography>
                   </Box>
                 ))}
               </Box>
@@ -74,7 +76,16 @@ const About: React.FC = () => {
               <Box>
                 {awards.map((award, index) => (
                   <Box key={index} sx={{ mb: 2 }}>
-                    <Typography variant="h6">{award.title}</Typography>
+                    {award.link && (
+                      <Typography variant="h6" sx={{ color: 'primary.main' }}>
+                        <a href={award.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>
+                          {award.title}
+                        </a>
+                      </Typography>
+                    )}
+                    {!award.link && (
+                      <Typography variant="h6">{award.title}</Typography>
+                    )}
                     <Typography variant="subtitle2" color="text.secondary">{award.date}</Typography>
                   </Box>
                 ))}

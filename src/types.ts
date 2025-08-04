@@ -27,9 +27,12 @@ export interface Article {
   platform: string;
   url: string;
   imageUrl: string;
+  mentioned: boolean; 
 }
 
 export interface Award {
   date: string;
   title: string;
+  link?: string;
+  description?: string;
 }
