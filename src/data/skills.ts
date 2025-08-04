@@ -1,19 +1,25 @@
-import type { Skill } from '../types';
+import type { SkillCategory } from '../types';
 
-export const skills: Skill[] = [
-  { name: 'Swift', icon: '' },
-  { name: 'C#', icon: '' },
-  { name: 'JavaScript', icon: '' },
-  { name: 'TypeScript', icon: '' },
-  { name: 'Python', icon: '' },
-  { name: 'SwiftUI', icon: '' },
-  { name: 'UIKit', icon: '' },
-  { name: 'Core Data', icon: '' },
-  { name: 'Combine', icon: '' },
-  { name: 'Unity Engine', icon: '' },
-  { name: 'AR Foundation', icon: '' },
-  { name: 'Unreal Engine', icon: '' },
-  { name: 'Git', icon: '' },
-  { name: 'Agile', icon: '' },
-  { name: 'REST APIs', icon: '' },
+export const skillCategories: SkillCategory[] = [
+  {
+    category: 'Languages',
+    skills: ['Swift', 'C#', 'C', 'C++', 'Dart', 'Java', 'Kotlin', 'Javascript'],
+  },
+  {
+    category: 'Relevant Frameworks and Tools',
+    skills: [
+      'SwiftUI', 'UIKit', 'Core Data', 'Combine', 'Concurrency', 'RealityKit', 'ARKit', 'Xcode', 'SPM',
+      'CocoaPods', 'Unity Engine', '.NET', 'Unreal Engine', 'Visual Studio', 'Firebase', 'Postman', 'Proxyman',
+      'Git', 'AWS', 'Azure', 'Docker', 'Flutter', 'AndroidStudio', 'ServiceNow', 'Jira'
+    ],
+  },
+  {
+    category: 'Methodologies and other skills',
+    skills: [
+      'Mobile Development', 'Software architecture and Design Patterns', 'Reactive Programming',
+      'Networking & API Integrations', 'SOLID principles and Clean Architecture', 'CI/CD',
+      'Test-Driven Development', 'Game Development', 'XR Development', 'Agile and Scrum methodologies',
+      'Learning Aptitude'
+    ],
+  },
 ];

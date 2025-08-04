@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar, Box, Grid, Tab, Tabs, Typography, Chip } from '@mui/material';
 import { experiences } from '../data/experience';
-import { skills } from '../data/skills';
+import { skillCategories } from '../data/skills';
 import { education } from '../data/education';
 import { awards } from '../data/awards';
 import { aboutHighlightedText, aboutText } from '../data/about';
@@ -55,9 +55,16 @@ const About: React.FC = () => {
               </Box>
             )}
             {tabIndex === 2 && (
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                {skills.map((skill) => (
-                  <Chip label={skill.name} key={skill.name} />
+              <Box>
+                {skillCategories.map((category, index) => (
+                  <Box key={index} sx={{ mb: 2 }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>{category.category}</Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                      {category.skills.map((skill, skillIndex) => (
+                        <Chip label={skill} key={skillIndex} size="small" />
+                      ))}
+                    </Box>
+                  </Box>
                 ))}
               </Box>
             )}
