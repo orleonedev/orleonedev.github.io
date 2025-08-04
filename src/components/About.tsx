@@ -57,8 +57,8 @@ const About: React.FC = () => {
             {tabIndex === 2 && (
               <Box>
                 {skillCategories.map((category, index) => (
-                  <Box key={index} sx={{ mb: 2 }}>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>{category.category}</Typography>
+                  <Box key={index} sx={{ mb: 4 }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 2, color: 'primary.main' }}>{category.category}</Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                       {category.skills.map((skill, skillIndex) => (
                         <Chip label={skill} key={skillIndex} size="small" />
