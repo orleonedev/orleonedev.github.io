@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
-import { Box, Button, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material';
 import NotFoundPage from './NotFoundPage';
 
 const ProjectDetailPage: React.FC = () => {
@@ -13,37 +12,71 @@ const ProjectDetailPage: React.FC = () => {
   }
 
   return (
-    <Box sx={{ p: 4 }}>
-      <Button component={Link} to="/" variant="contained" sx={{ mb: 4 }}>
+    <div className="p-8 max-w-4xl mx-auto">
+      <Link 
+        to="/" 
+        className="inline-block px-6 py-2 bg-[#D49D3A] text-black font-bold rounded-md hover:bg-[#D49D3A]/90 transition-colors mb-8"
+      >
         Back to Home
-      </Button>
-      <Card>
-        <CardMedia
-          component="img"
-          height="400"
-          image={project.image}
+      </Link>
+      <div className="bg-[#161B22] border border-gray-800 rounded-lg overflow-hidden">
+        <img
+          src={project.image}
           alt={project.title}
+          className="w-full h-96 object-cover"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h3" component="div">
+        <div className="p-8">
+          <h1 className="text-4xl font-bold mb-4 text-white">
             {project.title}
-          </Typography>
-          <Box sx={{ my: 2 }}>
+          </h1>
+          <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag) => (
-              <Chip label={tag} key={tag} sx={{ mr: 1 }} />
+              <span 
+                key={tag} 
+                className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm border border-gray-700"
+              >
+                {tag}
+              </span>
             ))}
-          </Box>
-          <Typography variant="body1" color="text.secondary">
+          </div>
+          <p className="text-lg text-gray-400 mb-8 leading-relaxed">
             {project.description}
-          </Typography>
-          <Box sx={{ mt: 3 }}>
-            {project.appStoreUrl && <Button variant="outlined" href={project.appStoreUrl} target="_blank" sx={{ mr: 1 }}>App Store</Button>}
-            {project.gitHubUrl && <Button variant="outlined" href={project.gitHubUrl} target="_blank" sx={{ mr: 1 }}>GitHub</Button>}
-            {project.websiteUrl && <Button variant="outlined" href={project.websiteUrl} target="_blank">Website</Button>}
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {project.appStoreUrl && (
+              <a 
+                href={project.appStoreUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-2 border border-[#D49D3A] text-[#D49D3A] rounded-md hover:bg-[#D49D3A]/10 transition-colors"
+              >
+                App Store
+              </a>
+            )}
+            {project.gitHubUrl && (
+              <a 
+                href={project.gitHubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-2 border border-[#D49D3A] text-[#D49D3A] rounded-md hover:bg-[#D49D3A]/10 transition-colors"
+              >
+                GitHub
+              </a>
+            )}
+            {project.websiteUrl && (
+              <a 
+                href={project.websiteUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-2 border border-[#D49D3A] text-[#D49D3A] rounded-md hover:bg-[#D49D3A]/10 transition-colors"
+              >
+                Website
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

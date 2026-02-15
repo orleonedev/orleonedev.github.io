@@ -1,18 +1,28 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainPage from './pages/MainPage';
+import { NavigationProvider } from './context/NavigationContext';
+import AppLayout from './components/layout/AppLayout';
+import AboutTab from './pages/v2/AboutTab';
+import ShowcaseTab from './pages/v2/ShowcaseTab';
+import InsightsTab from './pages/v2/InsightsTab';
+import ConnectTab from './pages/v2/ConnectTab';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
-import './App.css';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <NavigationProvider>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<AboutTab />} />
+            <Route path="/showcase" element={<ShowcaseTab />} />
+            <Route path="/insights" element={<InsightsTab />} />
+            <Route path="/connect" element={<ConnectTab />} />
+            <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </NavigationProvider>
     </Router>
   );
 }

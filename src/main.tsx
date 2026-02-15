@@ -1,13 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
 import './index.css'
 import App from './App.tsx'
-import ThemeRegistry from "./theme/ThemeRegistry.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeRegistry>
+    <Theme appearance="dark" accentColor="amber" grayColor="slate" panelBackground="translucent" radius="large">
       <App />
-    </ThemeRegistry>
+    </Theme>
   </StrictMode>,
 )

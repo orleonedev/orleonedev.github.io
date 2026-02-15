@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, useScrollTrigger, Box, Typography, IconButton, Menu, MenuItem, useMediaQuery } from '@mui/material';
-import type { Theme } from '@mui/material/styles';
+import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink, scroller } from 'react-scroll';
-import MenuIcon from '@mui/icons-material/Menu';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
   { title: 'Home', to: 'hero' },
@@ -13,23 +11,19 @@ const navLinks = [
 ];
 
 const Navbar: React.FC = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMobileLinkClick = (to: string) => {
-    handleMenuClose();
+    setIsOpen(false);
     scroller.scrollTo(to, {
       spy: true,
       smooth: true,
@@ -39,72 +33,70 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar
-      position="fixed"
-      elevation={0}
-      sx={{
-        backgroundColor: trigger ? 'rgba(22, 27, 34, 0.85)' : 'transparent',
-        backdropFilter: trigger ? 'blur(8px)' : 'none',
-        borderBottom: '1px solid',
-        borderColor: trigger ? 'divider' : 'transparent',
-        transition: 'background-color 0.3s, border-color 0.3s',
-      }}
+    <nav
+      className={`fixed top-8 w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-[#161B22]/85 backdrop-blur-md border-b border-gray-800' 
+          : 'bg-transparent border-b border-transparent'
+      }`}
     >
-      <Toolbar>
-        {isMobile ? (
-          <>
-            <IconButton sx={{ visibility: 'hidden' }}><MenuIcon /></IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-              orleone<Box component="span" sx={{ color: 'primary.main' }}>.dev</Box>
-            </Typography>
-            <IconButton edge="end" color="inherit" aria-label="menu" onClick={handleMenuOpen}>
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-              sx={{ mt: '45px' }}
-            >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <h1 className="text-xl font-bold text-white">
+              orleone<span className="text-[#D49D3A]">.dev</span>
+            </h1>
+          </div>
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
-                <MenuItem key={link.title} onClick={() => handleMobileLinkClick(link.to)}>
-                  {link.title}
-                </MenuItem>
-              ))}
-            </Menu>
-          </>
-        ) : (
-          <>
-            <Typography variant="h6" component="div">
-              orleone<Box component="span" sx={{ color: 'primary.main' }}>.dev</Box>
-            </Typography>
-            <Box sx={{ ml: 'auto' }}>
-              {navLinks.map((link) => (
-                <Button
+                <ScrollLink
                   key={link.title}
-                  component={ScrollLink}
                   to={link.to}
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  color="inherit"
-                  sx={{
-                    color: 'text.primary',
-                    '&.active': { color: 'primary.main' },
-                    '&:hover': { color: 'primary.main', backgroundColor: 'transparent' }
-                  }}
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#D49D3A] cursor-pointer transition-colors active:text-[#D49D3A]"
+                  activeClass="text-[#D49D3A]"
                 >
                   {link.title}
-                </Button>
+                </ScrollLink>
               ))}
-            </Box>
-          </>
-        )}
-      </Toolbar>
-    </AppBar>
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+            >
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div className="md:hidden bg-[#161B22] border-b border-gray-800 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navLinks.map((link) => (
+              <button
+                key={link.title}
+                onClick={() => handleMobileLinkClick(link.to)}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#D49D3A] hover:bg-gray-700"
+              >
+                {link.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 

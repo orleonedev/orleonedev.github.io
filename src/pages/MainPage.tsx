@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import StatusBar from '../components/StatusBar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
@@ -22,15 +22,18 @@ const Section: React.FC<{ children: React.ReactNode, id: string }> = ({ children
 
 const MainPage: React.FC = () => {
   return (
-    <Box>
+    <div className="bg-[#0D1117] min-h-screen text-white pt-8">
+      <StatusBar />
       <Navbar />
       <Hero />
       <Section id="about"><About /></Section>
       <Section id="portfolio"><Portfolio /></Section>
       <Section id="articles"><Articles /></Section>
       <Section id="contact"><Contact /></Section>
-    </Box>
+    </div>
   );
 };
 
 export default MainPage;
+
+

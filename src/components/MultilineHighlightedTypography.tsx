@@ -1,12 +1,11 @@
 import React from 'react';
-import { Typography, Box } from '@mui/material';
-import type { TypographyProps } from '@mui/material/Typography';
 
-interface MultilineHighlighterProps extends TypographyProps {
+interface MultilineHighlighterProps {
   text: string;
   highlightPhrases?: string[];
   highlightColor?: string;
-  highlightWeight?: 'bold' | 'normal' | number;
+  highlightWeight?: 'bold' | 'normal' | string | number;
+  className?: string;
 }
 
 /**
@@ -17,12 +16,19 @@ interface MultilineHighlighterProps extends TypographyProps {
 export const MultilineHighlightedTypography: React.FC<MultilineHighlighterProps> = ({
   text,
   highlightPhrases = [],
-  highlightColor = 'yellow',
+  highlightColor = '#D49D3A',
   highlightWeight = 'bold',
-  ...typographyProps
+  className = '',
 }) => {
   const renderText = () => {
-    if (highlightPhrases.length === 0) return text;
+    if (highlightPhrases.length === 0) {
+        return text.split('\n').map((line, i) => (
+            <React.Fragment key={i}>
+                {line}
+                <br />
+            </React.Fragment>
+        ));
+    }
 
     // Escape regex characters in phrases
     const escapeRegex = (s: string) =>
@@ -48,17 +54,16 @@ export const MultilineHighlightedTypography: React.FC<MultilineHighlighterProps>
               phrase => phrase.toLowerCase() === part.toLowerCase()
             );
             return isMatch ? (
-              <Box
+              <span
                 key={j}
-                component="span"
-                sx={{
+                style={{
                   color: highlightColor,
-                  fontWeight: highlightWeight,
-                  display: 'inline',
+                  fontWeight: highlightWeight as any,
                 }}
+                className="inline"
               >
                 {part}
-              </Box>
+              </span>
             ) : (
               <React.Fragment key={j}>{part}</React.Fragment>
             );
@@ -69,5 +74,5 @@ export const MultilineHighlightedTypography: React.FC<MultilineHighlighterProps>
     });
   };
 
-  return <Typography {...typographyProps}>{renderText()}</Typography>;
+  return <p className={className}>{renderText()}</p>;
 };
