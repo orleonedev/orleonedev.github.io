@@ -7,10 +7,12 @@ import InsightsTab from './pages/v2/InsightsTab';
 import ConnectTab from './pages/v2/ConnectTab';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ScrollToTop from './hooks/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <NavigationProvider>
         <Routes>
           <Route element={<AppLayout />}>
