@@ -1,34 +1,37 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FiUsers, FiSmartphone, FiLayers, FiTool } from 'react-icons/fi';
 import { skillCategories } from '../../data/skills';
 import GlassCard from '../ui/GlassCard';
+import SectionHeader from '../ui/SectionHeader';
+import { revealOnScroll } from '../../lib/motion';
 
-const SkillsGrid: React.FC = () => {
-  return (
-    <section className="py-24 px-6">
-      <h3 className="text-3xl font-bold mb-12 flex items-center gap-4">
-        <span className="w-12 h-[1px] bg-[#D49D3A]/50"></span>
-        Core Competencies
-      </h3>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {skillCategories.map((cat, i) => (
-          <GlassCard key={i} className="p-8" hover={false}>
-            <h4 className="text-[#D49D3A] font-bold text-xs uppercase tracking-widest mb-6">{cat.category}</h4>
-            <div className="flex flex-wrap gap-2">
-              {cat.skills.map((skill, j) => (
-                <span 
-                  key={j}
-                  className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium text-white/70 hover:border-[#D49D3A]/40 hover:text-white transition-all cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </GlassCard>
-        ))}
-      </div>
-    </section>
-  );
-};
+const categoryIcons = [<FiUsers />, <FiSmartphone />, <FiLayers />, <FiTool />];
+
+const SkillsGrid: React.FC = () => (
+  <motion.section {...revealOnScroll} className="py-16 md:py-24">
+    <SectionHeader eyebrow="Competencies" title="What I bring to a team" />
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {skillCategories.map((cat, i) => (
+        <GlassCard key={cat.category} className="p-7 md:p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="glass-chip w-10 h-10 flex items-center justify-center text-accent text-lg">
+              {categoryIcons[i % categoryIcons.length]}
+            </span>
+            <h3 className="text-lg font-semibold tracking-tight">{cat.category}</h3>
+          </div>
+          <ul className="flex flex-wrap gap-2">
+            {cat.skills.map((skill) => (
+              <li key={skill} className="glass-chip px-3.5 py-1.5 text-sm font-medium text-white/85">
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </GlassCard>
+      ))}
+    </div>
+  </motion.section>
+);
 
 export default SkillsGrid;

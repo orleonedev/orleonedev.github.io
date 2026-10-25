@@ -6,17 +6,15 @@ import SkillsGrid from '../../components/about/SkillsGrid';
 import EducationAwards from '../../components/about/EducationAwards';
 import SectionPreviews from '../../components/about/SectionPreviews';
 
-const AboutTab: React.FC = () => {
-  return (
-    <div className="animate-in fade-in duration-1000">
-      <AboutHero />
-      <BioSection />
-      <SkillsGrid />
-      <ExperienceTimeline />
-      <EducationAwards />
-      <SectionPreviews />
-    </div>
-  );
-};
+const AboutTab: React.FC = () => (
+  <>
+    <AboutHero />
+    <BioSection />
+    <SkillsGrid />
+    <ExperienceTimeline />
+    <EducationAwards />
+    <SectionPreviews />
+  </>
+);
 
 export default AboutTab;

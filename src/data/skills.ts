@@ -2,24 +2,32 @@ import type { SkillCategory } from '../types';
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: 'Languages',
-    skills: ['Swift', 'Objective-C', 'Typescript', 'Javascript', 'C#', 'C', 'C++', 'Dart', 'Java', 'Kotlin', 'Python', 'SQL'],
-  },
-  {
-    category: 'Relevant Frameworks and Tools',
+    category: 'Team & Delivery',
     skills: [
-      'SwiftUI', 'UIKit', 'Core Data', 'Combine', 'Concurrency', 'RealityKit', 'ARKit', 'Xcode', 'SPM',
-      'CocoaPods', 'Unity Engine', '.NET', 'Unreal Engine', 'Visual Studio', 'Firebase', 'Postman', 'Proxyman',
-      'Git', 'AWS', 'Azure', 'GoogleCloud', 'Docker', 'Flutter', 'AndroidStudio', 'ServiceNow', 'Jira', 'Confluence'
+      'Technical analysis', 'Architecture decisions', 'Sprint planning & estimates', 'Code review',
+      'Release coordination', 'Monitoring & incidents', 'Technical documentation', 'Hiring interviews',
+      'Onboarding teammates', 'Cross‑functional alignment', 'Agile / Scrum',
     ],
   },
   {
-    category: 'Methodologies and other skills',
+    category: 'iOS Platform',
     skills: [
-      'Mobile Development', 'Software architecture and Design Patterns', 'Reactive Programming',
-      'Networking & API Integrations', 'SOLID principles and Clean Architecture', 'CI/CD',
-      'Test-Driven Development', 'Game Development', 'XR Development', 'Agile and Scrum methodologies',
-      'Learning Aptitude', 'Mentorship'
+      'Swift', 'SwiftUI', 'UIKit', 'Combine', 'Swift Concurrency', 'Core Data',
+      'Accessibility', 'Analytics', 'ARKit / RealityKit', 'Objective‑C', 'SPM',
+    ],
+  },
+  {
+    category: 'Architecture & Quality',
+    skills: [
+      'MVVM + Coordinator', 'Clean Architecture', 'SOLID', 'Reactive programming',
+      'Test‑driven development', 'CI/CD & build tooling', 'Dependency & SDK upkeep', 'Networking & API integration',
+    ],
+  },
+  {
+    category: 'Beyond iOS',
+    skills: [
+      'Unity / C#', 'Kotlin', 'Flutter / Dart', 'TypeScript', 'Firebase',
+      'AWS · Azure · GCP', 'Git', 'Proxyman / Postman',
     ],
   },
 ];

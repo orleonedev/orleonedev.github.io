@@ -1,40 +1,30 @@
-export const aboutText =  `Hi! I’m a Mobile Software Engineer focused on building scalable, user‑centric applications in enterprise and omnichannel e‑commerce environments. I enjoy taking ownership of complex codebases, improving architecture and developer experience, and making sure what we ship is reliable for both the business and the end user. 
+// Bio paragraphs are separated by blank lines.
+// Positioning: experienced iOS engineer who already does much of a lead's work — but no formal lead title,
+// so never claim one.
+export const aboutText = `I'm an iOS engineer who likes to look past the ticket. At Oniverse (ex Calzedonia Group) I work on the group's mobile e‑commerce apps, used every day by customers across multiple brands — and beyond building features, I take care of much of what surrounds them for my team: technical analysis of upcoming work, architecture decisions, sprint planning and estimates, code reviews, release coordination, monitoring crashes and performance in production, handling incidents when something breaks, keeping dependencies up to date, and interviewing candidates and onboarding new teammates.
 
-At Oniverse ( ex Calzedonia Group ), I work as an iOS Software Engineer on the group’s mobile e‑commerce stack, contributing to apps used every day by customers across multiple brands. 
-Before that, I worked in consulting, building and evolving native iOS applications for leading companies in luxury retail and betting, which gave me exposure to high‑impact products, strict quality requirements and cross‑functional teams in enterprise contexts. 
-Over the years, I’ve developed strong skills in mobile architecture (MVVM + Coordinator, Clean Architecture), both in UIKit and SwiftUI, reactive programming (Combine, Swift Concurrency), and end‑to‑end delivery of features in production environments, from integrating external services to improving performance, stability and developer workflows. I’m comfortable working across legacy and modern codebases and collaborating closely with design, backend and business stakeholders to align technical decisions with product goals. 
+Before that, in consulting, I built and evolved native iOS apps for leading companies in luxury retail and betting, where quality requirements are strict and teams are cross‑functional by default.
 
-🎮 On the side, I co‑created the mobile game trilogy Lapse, which has surpassed 15M+ downloads globally across the App Store and Google Play Store, giving me hands‑on experience with the full product lifecycle: design, implementation, monetization, analytics and large‑scale community feedback. 
+My toolbox: MVVM + Coordinator and Clean Architecture across UIKit and SwiftUI, Combine and Swift Concurrency, and the unglamorous work of moving legacy code forward without stopping delivery.
 
-🎯 My background includes the Apple Developer Academy and Computer Science studies at the University of Naples Federico II, and I’m particularly interested in mobile architecture, e‑commerce experiences and emerging technologies (XR, AI, Gaming), which I like to bring into the products I work on. 
+On the side I co‑created Lapse, a mobile game trilogy with 15M+ downloads on the App Store and Google Play — my crash course in the full product lifecycle: design, monetization, analytics and listening to a very large community.
 
-Always happy to connect with people working in mobile development, games or emerging tech – whether for collaboration, idea exchange or mentorship.`;
+I started at the Apple Developer Academy and studied Computer Science at the University of Naples Federico II. Today I also take on freelance projects and consulting, and offer one‑to‑one sessions for developers who want to grow — mock interviews (I run real ones for my team, so I know both sides of the table), code reviews and career advice. If any of that sounds useful, let's talk.`;
 
 export const aboutHighlightedText: string[] = [
-  'iOS',
-  'mobile',
-  'architecture',
-  'enterprise',
-  'omnichannel',
-  'e‑commerce',
-  'developer experience',
+  'look past the ticket',
   'Oniverse',
-  'iOS Software Engineer',
-  'Mobile Software Engineer',
-  'Swift',
+  'much of what surrounds them',
+  'luxury retail and betting',
+  'MVVM + Coordinator',
+  'Clean Architecture',
   'SwiftUI',
   'UIKit',
   'Combine',
   'Swift Concurrency',
   'Lapse',
-  '15 million downloads',
-  'App Store',
-  'Google Play Store',
+  '15M+ downloads',
   'Apple Developer Academy',
-  'University of Naples Federico II',
-  'legacy and modern codebases',
-  'cross‑functional teams',
-  'collaborating closely with design, backend and business stakeholders',
-  'XR, AI, Gaming',
-  'collaboration, idea exchange or mentorship',
+  'freelance projects and consulting',
+  'one‑to‑one sessions',
 ];

@@ -1,27 +1,32 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useState } from 'react';
 import type { ReactNode } from 'react';
+import { NavigationContext } from './navigation';
 
-interface NavigationContextType {
-  isSidebar: boolean;
-  setIsSidebar: (value: boolean) => void;
-}
+const STORAGE_KEY = 'nav-sidebar';
 
-const NavigationContext = createContext<NavigationContextType | undefined>(undefined);
+const readStoredSidebar = () => {
+  try {
+    return localStorage.getItem(STORAGE_KEY) === '1';
+  } catch {
+    return false;
+  }
+};
 
 export const NavigationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isSidebar, setIsSidebar] = useState(false);
+  const [isSidebar, setIsSidebarState] = useState(readStoredSidebar);
+
+  const setIsSidebar = (value: boolean) => {
+    setIsSidebarState(value);
+    try {
+      localStorage.setItem(STORAGE_KEY, value ? '1' : '0');
+    } catch {
+      // Storage unavailable (private mode) — the preference just won't persist.
+    }
+  };
 
   return (
     <NavigationContext.Provider value={{ isSidebar, setIsSidebar }}>
       {children}
     </NavigationContext.Provider>
   );
-};
-
-export const useNavigation = () => {
-  const context = useContext(NavigationContext);
-  if (context === undefined) {
-    throw new Error('useNavigation must be used within a NavigationProvider');
-  }
-  return context;
 };

@@ -3,76 +3,45 @@ import React from 'react';
 interface MultilineHighlighterProps {
   text: string;
   highlightPhrases?: string[];
-  highlightColor?: string;
-  highlightWeight?: 'bold' | 'normal' | string | number;
   className?: string;
+  highlightClassName?: string;
 }
 
+const escapeRegex = (s: string) => s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+
 /**
- * Reusable component that:
- * - Renders multiline text (respects \n)
- * - Highlights specified phrases
+ * Renders text split into paragraphs on blank lines, highlighting the given phrases.
  */
 export const MultilineHighlightedTypography: React.FC<MultilineHighlighterProps> = ({
   text,
   highlightPhrases = [],
-  highlightColor = '#D49D3A',
-  highlightWeight = 'bold',
   className = '',
+  highlightClassName = 'text-accent font-semibold',
 }) => {
-  const renderText = () => {
-    if (highlightPhrases.length === 0) {
-        return text.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-                {line}
-                <br />
-            </React.Fragment>
-        ));
-    }
+  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const pattern = [...highlightPhrases]
+    .sort((a, b) => b.length - a.length) // match longer phrases first
+    .map(escapeRegex)
+    .join('|');
+  const regex = pattern ? new RegExp(`(${pattern})`, 'gi') : null;
+  const isHighlight = (part: string) =>
+    highlightPhrases.some((phrase) => phrase.toLowerCase() === part.toLowerCase());
 
-    // Escape regex characters in phrases
-    const escapeRegex = (s: string) =>
-      s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-
-    // Create one big regex with all phrases
-    const pattern = highlightPhrases
-      .map(escapeRegex)
-      .sort((a, b) => b.length - a.length) // Match longer phrases first
-      .join('|');
-
-    const regex = new RegExp(`(${pattern})`, 'gi');
-
-    // Split text into lines
-    const lines = text.split('\n');
-
-    return lines.map((line, i) => {
-      const parts = line.split(regex);
-      return (
-        <React.Fragment key={i}>
-          {parts.map((part, j) => {
-            const isMatch = highlightPhrases.some(
-              phrase => phrase.toLowerCase() === part.toLowerCase()
-            );
-            return isMatch ? (
-              <span
-                key={j}
-                style={{
-                  color: highlightColor,
-                  fontWeight: highlightWeight as any,
-                }}
-                className="inline"
-              >
-                {part}
-              </span>
-            ) : (
-              <React.Fragment key={j}>{part}</React.Fragment>
-            );
-          })}
-          <br />
-        </React.Fragment>
-      );
-    });
-  };
-
-  return <p className={className}>{renderText()}</p>;
+  return (
+    <div className={className}>
+      {paragraphs.map((paragraph, i) => (
+        <p key={i} className="mb-5 last:mb-0">
+          {regex
+            ? paragraph.split(regex).map((part, j) =>
+                isHighlight(part) ? (
+                  <span key={j} className={highlightClassName}>{part}</span>
+                ) : (
+                  <React.Fragment key={j}>{part}</React.Fragment>
+                ),
+              )
+            : paragraph}
+        </p>
+      ))}
+    </div>
+  );
 };

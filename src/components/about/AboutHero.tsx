@@ -1,56 +1,98 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
+import profilePic from '../../assets/images/profile_pic_squared.jpg';
+import GlassCard from '../ui/GlassCard';
+import { fadeUp, spring, stagger } from '../../lib/motion';
 
-const AboutHero: React.FC = () => {
-  return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-10"
-      >
-        <h2 className="text-[#D49D3A] font-bold tracking-[0.2em] uppercase text-sm mb-6">
-          Senior iOS Software Engineer
-        </h2>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-          Architecting Scalable <br />
-          <span className="text-white/40">Mobile Ecosystems.</span>
-        </h1>
-        <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 mb-12 leading-relaxed">
-          Specializing in high-performance enterprise solutions and 
-          consumer apps with over 15M+ global downloads. 
-          Driven by clean architecture and seamless user experiences.
-        </p>
-        
-        <div className="flex items-center justify-center gap-6">
-          {[
-            { icon: <FaGithub />, href: "https://github.com/orleonedev", label: "GitHub" },
-            { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/orleonedev", label: "LinkedIn" },
-            { icon: <FaMedium />, href: "https://medium.com/@orleone.dev", label: "Medium" }
-          ].map((social) => (
-            <motion.a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-white/40 hover:text-[#D49D3A] hover:border-[#D49D3A]/30 transition-colors shadow-xl backdrop-blur-md"
-            >
-              <span className="text-2xl">{social.icon}</span>
-            </motion.a>
-          ))}
-        </div>
-      </motion.div>
-      
-      {/* Visual Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D49D3A]/5 blur-[120px] rounded-full" />
+const socials = [
+  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/orleonedev', label: 'LinkedIn' },
+  { icon: <FaGithub />, href: 'https://github.com/orleonedev', label: 'GitHub' },
+  { icon: <FaMedium />, href: 'https://medium.com/@orleone.dev', label: 'Medium' },
+];
+
+const stats = [
+  { value: '15M+', label: 'downloads across the Lapse trilogy' },
+  { value: '2×', label: 'Apple Swift Student Challenge winner' },
+  { value: '2017', label: 'shipping mobile products since' },
+];
+
+const AboutHero: React.FC = () => (
+  <motion.section
+    initial="hidden"
+    animate="visible"
+    variants={stagger}
+    className="min-h-[calc(100dvh-10rem)] flex flex-col items-center justify-center text-center py-10"
+  >
+    <motion.div variants={fadeUp} className="relative mb-8">
+      <div className="absolute -inset-3 rounded-full bg-[conic-gradient(from_180deg,var(--color-accent),var(--color-aurora-violet),var(--color-aurora-teal),var(--color-accent))] opacity-60 blur-xl" />
+      <div className="glass-strong !rounded-full p-1.5">
+        <img
+          src={profilePic}
+          alt="Oreste Leone"
+          className="relative w-28 h-28 md:w-36 md:h-36 rounded-full object-cover"
+        />
       </div>
-    </section>
-  );
-};
+    </motion.div>
+
+    <motion.p variants={fadeUp} className="glass-chip inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-white/90 mb-6">
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+      </span>
+      Oreste Leone
+    </motion.p>
+
+    <motion.h1 variants={fadeUp} className="font-bold tracking-[-0.04em] mb-6">
+      <span className="block text-5xl sm:text-6xl md:text-8xl leading-[0.95]">iOS Engineer.</span>
+      <span className="block mt-2 md:mt-3 text-3xl sm:text-4xl md:text-6xl leading-[1.05] text-balance text-gradient-accent">
+        Apps, and the work around them.
+      </span>
+    </motion.h1>
+
+    <motion.p variants={fadeUp} className="max-w-2xl text-lg md:text-xl text-white/75 leading-relaxed mb-10">
+      I build iOS apps used every day across multiple brands, and look after everything around them —
+      from analysis and planning to releases and monitoring. Available for freelance projects, consulting
+      and one‑to‑one mentoring.
+    </motion.p>
+
+    <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-3 mb-14">
+      <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }} transition={spring}>
+        <Link
+          to="/connect"
+          className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent text-ink font-semibold shadow-[0_10px_30px_-8px_var(--color-accent)] hover:bg-[#f0b95e] transition-colors"
+        >
+          Get in touch <FiArrowRight />
+        </Link>
+      </motion.div>
+      {socials.map((social) => (
+        <motion.a
+          key={social.label}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.label}
+          whileHover={{ scale: 1.08, y: -2 }}
+          whileTap={{ scale: 0.92 }}
+          transition={spring}
+          className="glass !rounded-full w-12 h-12 flex items-center justify-center text-xl text-white/85 hover:text-white"
+        >
+          {social.icon}
+        </motion.a>
+      ))}
+    </motion.div>
+
+    <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 w-full max-w-3xl">
+      {stats.map((stat) => (
+        <GlassCard key={stat.value} className="px-6 py-5 text-left sm:text-center" hover={false}>
+          <p className="text-3xl md:text-4xl font-bold tracking-tight">{stat.value}</p>
+          <p className="text-sm text-white/70 mt-1">{stat.label}</p>
+        </GlassCard>
+      ))}
+    </motion.div>
+  </motion.section>
+);
 
 export default AboutHero;

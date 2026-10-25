@@ -14,25 +14,13 @@ export interface Experience {
   role: string;
   company: string;
   duration: string;
-  description: string;
+  description?: string;
+  highlights?: string[];
 }
 
 export interface SkillCategory {
   category: string;
   skills: string[];
-}
-
-export interface Skill {
-  name: string;
-  icon: string;
-}
-
-export interface Article {
-  title: string;
-  platform: string;
-  url: string;
-  imageUrl: string;
-  mentioned: boolean; 
 }
 
 export interface Award {

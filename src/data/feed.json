@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "id": "78899dadf1",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/@orleone.dev/unleashing-the-power-must-see-wwdc23-topics-for-game-developers-30e4d3acd475",
+      "title": "Unleashing the Power: Must-See WWDC23 Topics for Game Developers",
+      "excerpt": "A tour of WWDC23's gaming announcements — Game Mode, the Game Porting Toolkit and the opportunities spatial computing opens up for developers.",
+      "date": "2023-06-09",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*_SfxgwhFinAixD5O_CJmLA.png",
+      "tags": [
+        "WWDC",
+        "Games",
+        "visionOS"
+      ]
+    },
+    {
+      "id": "93c6ee189d",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/better-programming/design-patterns-for-games-state-pattern-97519e0b9165",
+      "title": "Design Patterns for Games: State Pattern",
+      "excerpt": "How the State Pattern and finite state machines keep behaviour flexible by splitting logic into distinct, testable states. Published in Better Programming.",
+      "date": "2023-01-20",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*MQpxTEevYpn_zyLV",
+      "tags": [
+        "Design Patterns",
+        "Architecture"
+      ]
+    },
+    {
+      "id": "0c8ba782e1",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/better-programming/make-it-structured-gameplaykit-6d7e79d5a44a",
+      "title": "How to Use GameplayKit in an Arcade iOS Game",
+      "excerpt": "Structuring an iOS game with GameplayKit's Entity-Component System and state machines for a codebase that scales. Published in Better Programming.",
+      "date": "2022-04-12",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*BABvUoK6yy-JtjH3UmgI_Q.jpeg",
+      "tags": [
+        "GameplayKit",
+        "Swift",
+        "ECS"
+      ]
+    }
+  ]
+}

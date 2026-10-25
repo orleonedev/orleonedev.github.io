@@ -1,3 +1,4 @@
+// Parked: not routed while Showcase is hidden — see docs/showcase-study.md.
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
@@ -14,10 +15,10 @@ const ProjectDetailPage: React.FC = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto">
       <Link 
-        to="/" 
+        to="/showcase" 
         className="inline-block px-6 py-2 bg-[#D49D3A] text-black font-bold rounded-md hover:bg-[#D49D3A]/90 transition-colors mb-8"
       >
-        Back to Home
+        Back to Showcase
       </Link>
       <div className="bg-[#161B22] border border-gray-800 rounded-lg overflow-hidden">
         <img
