@@ -7,6 +7,7 @@ export const experiences: Experience[] = [
     duration: '2026 — Present',
     highlights: [
       'Mobile e‑commerce apps for multiple brands, used daily by customers',
+      'Commerce integrations: Salesforce Commerce Cloud, CoreMedia CMS and payments (Stripe, Axerve / Gestpay)',
       'Technical analysis, sprint planning, architecture decisions and code reviews for the iOS team',
       'Release coordination, production monitoring and incident handling',
       'CI/CD, dependency and SDK upkeep, analytics and accessibility',
@@ -20,6 +21,7 @@ export const experiences: Experience[] = [
     highlights: [
       'Native iOS apps for enterprise clients in luxury retail and betting',
       'Contributed to product and architecture decisions focused on scalability and maintainability',
+      'REST API integrations and CI/CD pipelines across client projects',
       'Cross‑platform solutions alongside native work, inside cross‑functional teams',
     ],
   },

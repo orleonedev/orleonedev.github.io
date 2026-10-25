@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiUsers, FiSmartphone, FiLayers, FiTool } from 'react-icons/fi';
+import { FiUsers, FiSmartphone, FiBox, FiLayers, FiCheckCircle, FiShoppingBag, FiClipboard, FiTool } from 'react-icons/fi';
 import { skillCategories } from '../../data/skills';
 import GlassCard from '../ui/GlassCard';
 import SectionHeader from '../ui/SectionHeader';
 import { revealOnScroll } from '../../lib/motion';
 
-const categoryIcons = [<FiUsers />, <FiSmartphone />, <FiLayers />, <FiTool />];
+const categoryIcons = [
+  <FiUsers />, <FiSmartphone />, <FiBox />, <FiLayers />,
+  <FiCheckCircle />, <FiShoppingBag />, <FiClipboard />, <FiTool />,
+];
 
 const SkillsGrid: React.FC = () => (
   <motion.section {...revealOnScroll} className="py-16 md:py-24">

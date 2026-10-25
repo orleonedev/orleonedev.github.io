@@ -26,22 +26,17 @@ const AboutHero: React.FC = () => (
     variants={stagger}
     className="min-h-[calc(100dvh-10rem)] flex flex-col items-center justify-center text-center py-10"
   >
-    <motion.div variants={fadeUp} className="relative mb-8">
-      <div className="absolute -inset-3 rounded-full bg-[conic-gradient(from_180deg,var(--color-accent),var(--color-aurora-violet),var(--color-aurora-teal),var(--color-accent))] opacity-60 blur-xl" />
+    <motion.div variants={fadeUp} className="mb-5">
       <div className="glass-strong !rounded-full p-1.5">
         <img
           src={profilePic}
           alt="Oreste Leone"
-          className="relative w-28 h-28 md:w-36 md:h-36 rounded-full object-cover"
+          className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover"
         />
       </div>
     </motion.div>
 
-    <motion.p variants={fadeUp} className="glass-chip inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-white/90 mb-6">
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-      </span>
+    <motion.p variants={fadeUp} className="text-lg font-medium text-white/70 mb-4">
       Oreste Leone
     </motion.p>
 
