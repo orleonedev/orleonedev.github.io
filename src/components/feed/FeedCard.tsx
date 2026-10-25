@@ -93,18 +93,37 @@ const ArticleBody: React.FC<{ item: FeedItem }> = ({ item }) => (
   </>
 );
 
-/** My own social post: the text is the content. */
-const PostBody: React.FC<{ item: FeedItem }> = ({ item }) => (
-  <>
-    {item.title && <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>}
-    {item.excerpt && <p className="text-white/85 text-[17px] leading-relaxed whitespace-pre-line">{item.excerpt}</p>}
-    {item.image && (
-      <div className="overflow-hidden rounded-[20px] bg-white/5">
-        <img src={item.image} alt="" loading="lazy" className="w-full max-h-96 object-cover" />
-      </div>
-    )}
-  </>
-);
+/** My own social post: photo first, text clamped — the full post is one tap away. */
+const PostBody: React.FC<{ item: FeedItem }> = ({ item }) => {
+  const isLong = (item.excerpt?.length ?? 0) > 320;
+  return (
+    <>
+      {item.image && (
+        <div className="overflow-hidden rounded-[20px] aspect-[4/3] bg-white/5">
+          <img
+            src={item.image}
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-700 ease-ios group-hover:scale-105"
+          />
+        </div>
+      )}
+      {item.title && <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>}
+      {item.excerpt && (
+        <div>
+          <p className={`text-white/85 text-[16px] leading-relaxed whitespace-pre-line ${isLong ? 'line-clamp-6' : ''}`}>
+            {item.excerpt}
+          </p>
+          {isLong && (
+            <span className="inline-block mt-2 text-sm font-semibold text-accent">
+              Read more on {platforms[item.platform].label}
+            </span>
+          )}
+        </div>
+      )}
+    </>
+  );
+};
 
 /** Someone else's post: my note on top, their post quoted in an inset panel. */
 const SharedBody: React.FC<{ item: FeedItem }> = ({ item }) => (

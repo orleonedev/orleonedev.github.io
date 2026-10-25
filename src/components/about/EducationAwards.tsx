@@ -26,23 +26,24 @@ const EducationAwards: React.FC = () => (
     </motion.div>
 
     <motion.div {...revealOnScroll}>
-      <SectionHeader eyebrow="Recognition" title="Awards & certificates" />
+      <SectionHeader eyebrow="Recognition" title="Awards & milestones" />
       <div className="space-y-3">
         {awards.map((award) => (
-          <GlassCard key={award.title} className="p-5 flex items-center gap-4">
+          <GlassCard key={award.title} className={`p-5 flex gap-4 ${award.description ? 'items-start' : 'items-center'}`}>
             <span className="glass-chip w-10 h-10 flex-shrink-0 flex items-center justify-center text-accent">
               <FiAward />
             </span>
             <div className="flex-1 min-w-0">
               <h3 className="font-medium leading-snug">{award.title}</h3>
               <p className="text-white/60 text-xs mt-1">{award.date}</p>
+              {award.description && <p className="text-white/70 text-sm leading-relaxed mt-2">{award.description}</p>}
             </div>
             {award.link && (
               <a
                 href={award.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Verify: ${award.title}`}
+                aria-label={`More about: ${award.title}`}
                 className="text-white/70 hover:text-accent transition-colors"
               >
                 <FiExternalLink />

@@ -6,11 +6,10 @@ import { aboutText, aboutHighlightedText } from '../../data/about';
 import { MultilineHighlightedTypography } from '../MultilineHighlightedTypography';
 import { fadeUp, revealOnScroll } from '../../lib/motion';
 import meetupPhoto from '../../assets/images/Napoli-Meetup-edit.jpg';
-import portraitPhoto from '../../assets/images/profile_portrait.jpg';
 
 const photos = [
+  { src: '/images/wwdc26_totem.jpg', alt: 'Oreste at Apple Park during WWDC26' },
   { src: meetupPhoto, alt: 'Oreste at a developer meetup in Naples' },
-  { src: portraitPhoto, alt: 'Portrait of Oreste Leone' },
 ];
 
 const BioSection: React.FC = () => (

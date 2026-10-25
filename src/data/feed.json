@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "35dcd1f649",
+      "kind": "post",
+      "platform": "linkedin",
+      "source": "manual",
+      "url": "https://linkedin.com/posts/orleonedev_wwdc26-wwdc26-iosdev-share-7475617420012019712-D756/",
+      "excerpt": "Two weeks have already passed since my return from Cupertino and San Francisco, and only now can I fully process all the thoughts and emotions of #WWDC26. Time flies, especially after such an intense and stimulating event! It was great to connect with familiar faces and meet new professionals to discuss not only the Apple ecosystem, but also the broader challenges and opportunities shaping different industries. In particular, I found the conversations about agentic commerce extremely stimulating. The future of digital commerce is increasingly leaning toward personalized, AI-driven experiences. WWDC26 confirmed this trend through the direction taken with SiriAI and the massive focus on App Intents and Foundation Models. I am convinced we will see incredible innovations in this area in the coming years. And what an incredible highlight it was to see our own apps featured on the big screen at Apple Park! That was a proud milestone for the whole team back home. Coming back with fresh ideas, sharp insights, and ready to build what's next!",
+      "date": "2026-06-24",
+      "image": "/images/wwdc26_totem.jpg",
+      "tags": [
+        "WWDC26",
+        "App Intents",
+        "Foundation Models"
+      ]
+    },
+    {
       "id": "78899dadf1",
       "kind": "article",
       "platform": "medium",

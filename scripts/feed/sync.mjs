@@ -177,7 +177,8 @@ const addFromIssue = async (bodyFile) => {
     source: 'manual',
     url,
     title: f.Title || (kind === 'article' || kind === 'talk' ? og.title : undefined),
-    excerpt: truncate(f.Excerpt || og.excerpt, 400),
+    // My own posts are shown in full; quotes of other people's posts stay short.
+    excerpt: truncate(f.Excerpt || og.excerpt, kind === 'post' ? 1500 : 400),
     note: f['Your note'] || undefined,
     date,
     author: f['Author name']

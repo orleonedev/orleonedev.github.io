@@ -9,7 +9,7 @@ My toolbox: MVVM + Coordinator and Clean Architecture across UIKit and SwiftUI, 
 
 On the side I co‑created Lapse, a mobile game trilogy with 15M+ downloads on the App Store and Google Play — my crash course in the full product lifecycle: design, monetization, analytics and listening to a very large community.
 
-I started at the Apple Developer Academy and studied Computer Science at the University of Naples Federico II. Today I also take on freelance projects and consulting, and offer one‑to‑one sessions for developers who want to grow — mock interviews (I run real ones for my team, so I know both sides of the table), code reviews and career advice. If any of that sounds useful, let's talk.`;
+I started at the Apple Developer Academy and studied Computer Science at the University of Naples Federico II, and I've been selected to attend WWDC at Apple Park in 2025 and 2026 — a week of conversations with engineers from the SwiftUI, UIKit and Apple Pay teams and with developers from across the industry. Today I also take on freelance projects and consulting, and offer one‑to‑one sessions for developers who want to grow — mock interviews (I run real ones for my team, so I know both sides of the table), code reviews and career advice. If any of that sounds useful, let's talk.`;
 
 export const aboutHighlightedText: string[] = [
   'look past the ticket',
@@ -25,6 +25,7 @@ export const aboutHighlightedText: string[] = [
   'Lapse',
   '15M+ downloads',
   'Apple Developer Academy',
+  'WWDC at Apple Park',
   'freelance projects and consulting',
   'one‑to‑one sessions',
 ];
