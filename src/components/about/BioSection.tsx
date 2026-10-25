@@ -4,10 +4,13 @@ import { aboutText, aboutHighlightedText } from '../../data/about';
 import { MultilineHighlightedTypography } from '../MultilineHighlightedTypography';
 
 const BioSection: React.FC = () => {
+
+  const aboutHeader: string = "Something About Me";
+
   const images = [
-    "/oldPortfolioFiles/assets/img/ProfileSquaredMedium.png",
-    "/src/assets/images/medium_gameplayKit.jpeg", // Placeholder for additional image
-    "/src/assets/images/medium_wwdc23.jpeg"       // Placeholder for additional image
+    "/src/assets/images/profile_pic_squared.jpg",
+    "/src/assets/images/Napoli-Meetup-edit.jpg",
+    "/oldPortfolioFiles/assets/img/ProfileSquaredMedium.png"
   ];
 
   return (
@@ -44,7 +47,7 @@ const BioSection: React.FC = () => {
       {/* Bio Content */}
       <div className="md:col-span-8 lg:col-span-9 flex">
         <GlassCard className="p-10 w-full flex flex-col justify-center" hover={false}>
-          <h3 className="text-[#D49D3A] font-bold text-xs uppercase tracking-[0.3em] mb-6">The Architect</h3>
+          <h3 className="text-[#D49D3A] font-bold text-xs uppercase tracking-[0.3em] mb-6">{aboutHeader}</h3>
           <MultilineHighlightedTypography
             text={aboutText}
             highlightPhrases={aboutHighlightedText}
