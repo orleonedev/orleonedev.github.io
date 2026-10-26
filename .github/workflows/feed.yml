@@ -1,0 +1,106 @@
+name: Feed sync
+
+# Runs when a "Share to feed" issue is opened (or manually from the Actions tab):
+# adds the item, pulls new Medium articles, commits feed.json, builds and deploys.
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.issue.title, '[feed]') && github.event.issue.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Add item from issue
+        if: github.event_name == 'issues'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
+          node scripts/feed/sync.mjs issue "$RUNNER_TEMP/issue.md"
+
+      - name: Sync Medium
+        # A Medium outage shouldn't block adding the item.
+        continue-on-error: true
+        run: node scripts/feed/sync.mjs medium
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit feed
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/feed.json
+          if git diff --cached --quiet; then
+            echo "Feed unchanged."
+          else
+            git commit -m "feed: update${ISSUE_NUMBER:+ from #$ISSUE_NUMBER}"
+            git push
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  report:
+    needs: [sync, deploy]
+    if: always() && github.event_name == 'issues' && needs.sync.result != 'skipped'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      ISSUE: ${{ github.event.issue.number }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - if: needs.deploy.result == 'success'
+        run: gh issue close "$ISSUE" --comment "✅ Added to the feed and deployed. It may take a minute to show up on the site."
+      - if: needs.deploy.result != 'success'
+        run: gh issue comment "$ISSUE" --body "❌ Something went wrong — see the [workflow run]($RUN_URL). Fix the fields and open a new issue, or re-run the workflow."
+
+  # Anyone can open an issue on a public repo — ignore feed requests from others.
+  reject:
+    if: >-
+      github.event_name == 'issues' &&
+      startsWith(github.event.issue.title, '[feed]') &&
+      github.event.issue.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - run: gh issue close "${{ github.event.issue.number }}" --comment "Only the site owner can add items to the feed." --reason "not planned"

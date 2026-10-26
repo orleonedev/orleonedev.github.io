@@ -1,0 +1,157 @@
+{
+  "items": [
+    {
+      "id": "35dcd1f649",
+      "kind": "post",
+      "platform": "linkedin",
+      "source": "manual",
+      "url": "https://linkedin.com/posts/orleonedev_wwdc26-wwdc26-iosdev-share-7475617420012019712-D756/",
+      "excerpt": "Two weeks have already passed since my return from Cupertino and San Francisco, and only now can I fully process all the thoughts and emotions of #WWDC26. Time flies, especially after such an intense and stimulating event! It was great to connect with familiar faces and meet new professionals to discuss not only the Apple ecosystem, but also the broader challenges and opportunities shaping different industries. In particular, I found the conversations about agentic commerce extremely stimulating. The future of digital commerce is increasingly leaning toward personalized, AI-driven experiences. WWDC26 confirmed this trend through the direction taken with SiriAI and the massive focus on App Intents and Foundation Models. I am convinced we will see incredible innovations in this area in the coming years. And what an incredible highlight it was to see our own apps featured on the big screen at Apple Park! That was a proud milestone for the whole team back home. Coming back with fresh ideas, sharp insights, and ready to build what's next!",
+      "date": "2026-06-24",
+      "image": "/images/wwdc26_totem.jpg",
+      "tags": [
+        "WWDC26",
+        "App Intents",
+        "Foundation Models"
+      ]
+    },
+    {
+      "id": "35dcd1f650",
+      "kind": "post",
+      "platform": "linkedin",
+      "source": "manual",
+      "url": "https://lnkd.in/p/d9ntEFg6",
+      "excerpt": "In the coming days, I’ll be heading back to Cupertino and San Francisco to attend the WWDC 2026. I’m excited to have the opportunity to join the event once again, back to back, especially in a year that marks the 50th anniversary of #Apple. I’m looking forward to discover what’s next for the Apple ecosystem and exchanging ideas on how emerging technologies can create value for real products and businesses.\nIf you’ll be attending, I’d love to connect with fellow developers, product owners, and digital professionals working in e-commerce and mobile apps, particularly those exploring AI-driven experiences, personalization, and other innovations shaping the future of digital commerce.\nAlways happy to grab a coffee and have a chat, see you there!",
+      "date": "2026-06-04",
+      "image": "/images/wwdc26_invite.jpeg",
+      "tags": [
+        "WWDC26",
+        "Apple Park"
+      ]
+    },
+    {
+      "id": "66745cce22",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dR8tNGCP",
+      "excerpt": "A couple of weeks ago I had the incredible opportunity to give a talk at the Create with Swift Napoli Meetup #3, together with my colleagues Marco Tammaro and Oreste Leone: “Collaborating at Scale: Developer stories from consulting”.We shared insights, real-world examples, and actionable strategies for writing scalable code, improving team workflows, and navigating fast-paced projects. Sharing…",
+      "note": "Grateful for the experience and the conversations that followed. Thanks to everyone who joined and to the Create with Swift team for making it happen, looking forward to the next one!",
+      "date": "2025-04-30",
+      "author": {
+        "name": "Alessandro Alberti",
+        "handle": "@alessandro-alberti-dev"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQEas3QJC7uDWQ/feedshare-image-high-res/B4DZaIeBfJG0As-/0/1746046300769?e=1794441600&v=beta&t=NXD7-TP1r49djhmvjGXok2N9ZF-p8wJ6w3cwy7cuQbM",
+      "tags": [
+        "Talk",
+        "Collaboration",
+        "Dev-Meetup"
+      ]
+    },
+    {
+      "id": "6f05095f5e",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dMseBW8i",
+      "excerpt": "Thank you to everyone who joined us yesterday for our Naples Meetup #3 at Spazio Tra!We were thrilled to host four amazing speakers who shared their valuable experiences and insights. The conversations, connections, and energy in the room made for an unforgettable event. ✨",
+      "date": "2025-04-18",
+      "author": {
+        "name": "Create with Swift",
+        "handle": "@create-with-swift"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQGYgAd_Aubwww/feedshare-image-high-res/B4DZZJOMqwGgAs-/0/1744985185972?e=1794441600&v=beta&t=BQkOAjC190fiztdsmwBvUrLERFf0LTzC2wWMoG48Wi4",
+      "tags": [
+        "Dev-Meetup",
+        "Swift",
+        "Event"
+      ]
+    },
+    {
+      "id": "5d354b2674",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dhF7W7Pb",
+      "excerpt": "Marco Tammaro, Oreste Leone and Alessandro AlbertiCollaborating at Scale: Developer stories from consultingWorking in consulting means jumping between many different projects, each with its own unique demands, clients, and surprises. It’s a fast-paced environment where adaptability is key and no two weeks are alike. We’ll share real-world challenges that pushed us to pause, reflect, and grow.…",
+      "date": "2025-04-16",
+      "author": {
+        "name": "Create with Swift",
+        "handle": "@create-with-swift"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQFJipsCJM9FRg/feedshare-image-high-res/B4DZY.pucuH4As-/0/1744807850823?e=1794441600&v=beta&t=s9RCG99MEd3GXQIg_1N2srVN59inLo1FYaxYpJjyaoc",
+      "tags": [
+        "Talk",
+        "Collaboration",
+        "Consulting"
+      ]
+    },
+    {
+      "id": "255861e105",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dVuhneYi",
+      "excerpt": "👾 Meet Oreste Leone, iOS Engineer whose heart beats for Game Development! He's our award-winning and inspirational guide into the exciting world of game creation. \"Hello there! I’m Oreste Leone, your friendly neighborhood iOS Engineer and Game Developer here in Naples. 👾🍕Before joining the Apple Developer Academy, I studied Computer Science at the University of Naples Federico II and got my…",
+      "note": "I’m really excited to be featured in this Alumni Story edition for my commitment to game creation. A heartfelt thanks to Apple Developer Academy @Unina Federico II for the spotlight! 🥳👾",
+      "date": "2024-01-30",
+      "author": {
+        "name": "Apple Developer Academy @Unina Federico II"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQHR7rAnhtc97g/feedshare-image-high-res/feedshare-image-high-res/0/1705592296452?e=1794441600&v=beta&t=KBwPw3F0F40s9pSP8wwbyeMm4epBP9SPUl4VDln2oRo",
+      "tags": [
+        "AppleDeveloperAcademy",
+        "Alumni",
+        "Spotlight"
+      ]
+    },
+    {
+      "id": "78899dadf1",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/@orleone.dev/unleashing-the-power-must-see-wwdc23-topics-for-game-developers-30e4d3acd475",
+      "title": "Unleashing the Power: Must-See WWDC23 Topics for Game Developers",
+      "excerpt": "A tour of WWDC23's gaming announcements — Game Mode, the Game Porting Toolkit and the opportunities spatial computing opens up for developers.",
+      "date": "2023-06-09",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*_SfxgwhFinAixD5O_CJmLA.png",
+      "tags": [
+        "WWDC",
+        "Games",
+        "visionOS"
+      ]
+    },
+    {
+      "id": "93c6ee189d",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/better-programming/design-patterns-for-games-state-pattern-97519e0b9165",
+      "title": "Design Patterns for Games: State Pattern",
+      "excerpt": "How the State Pattern and finite state machines keep behaviour flexible by splitting logic into distinct, testable states. Published in Better Programming.",
+      "date": "2023-01-20",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*MQpxTEevYpn_zyLV",
+      "tags": [
+        "Design Patterns",
+        "Architecture"
+      ]
+    },
+    {
+      "id": "0c8ba782e1",
+      "kind": "article",
+      "platform": "medium",
+      "source": "medium",
+      "url": "https://medium.com/better-programming/make-it-structured-gameplaykit-6d7e79d5a44a",
+      "title": "How to Use GameplayKit in an Arcade iOS Game",
+      "excerpt": "Structuring an iOS game with GameplayKit's Entity-Component System and state machines for a codebase that scales. Published in Better Programming.",
+      "date": "2022-04-12",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*BABvUoK6yy-JtjH3UmgI_Q.jpeg",
+      "tags": [
+        "GameplayKit",
+        "Swift",
+        "ECS"
+      ]
+    }
+  ]
+}

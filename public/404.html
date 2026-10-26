@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>orleone.dev</title>
+    <script>
+      // GitHub Pages serves this for unknown paths. Hand the path to the SPA,
+      // which restores it in src/main.tsx so client-side routes work on reload.
+      var l = window.location;
+      l.replace(l.origin + '/?p=' + encodeURIComponent(l.pathname + l.search + l.hash));
+    </script>
+  </head>
+  <body></body>
+</html>
