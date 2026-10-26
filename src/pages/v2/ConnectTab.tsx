@@ -69,7 +69,7 @@ const ConnectTab: React.FC = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
               transition={spring}
-              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent text-ink font-semibold shadow-[0_10px_30px_-8px_var(--color-accent)]"
+              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent text-ink font-semibold hover:bg-[#f0b95e] transition-colors"
             >
               Pick a time <FiArrowUpRight />
             </motion.a>

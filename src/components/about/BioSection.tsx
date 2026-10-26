@@ -9,7 +9,7 @@ import meetupPhoto from '../../assets/images/Napoli-Meetup-edit.jpg';
 
 const photos = [
   { src: '/images/wwdc26_totem.jpg', alt: 'Oreste at Apple Park during WWDC26' },
-  { src: meetupPhoto, alt: 'Oreste at a developer meetup in Naples' },
+  { src: meetupPhoto, alt: 'Oreste giving the talk “Collaborating at Scale” at the Create with Swift Napoli Meetup' },
 ];
 
 const BioSection: React.FC = () => (

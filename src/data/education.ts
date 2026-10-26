@@ -5,8 +5,8 @@ export const education: Experience[] = [
     role: 'Pier Student',
     company: 'Apple Developer Academy - UNINA',
     duration: 'July 2022 - June 2023',
-    description: `The Pier Program is the second year experience at the Apple Developer Academy @UNINA that simulates a real-
-world working environment, allowing a small selection of candidates to work for international stakeholders. In this
+    description: `The Pier Program is the second year experience at the Apple Developer Academy @UNINA that simulates a real-world working
+environment, allowing a small selection of candidates to work for international stakeholders. In this
 program I worked as an App developer for the “mark” project, a SwiftUI based macOS app created around
 Challenge Based Learning to enhance the learning journey inside all the developer academies.`,
   },

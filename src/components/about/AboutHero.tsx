@@ -57,7 +57,7 @@ const AboutHero: React.FC = () => (
       <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }} transition={spring}>
         <Link
           to="/connect"
-          className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent text-ink font-semibold shadow-[0_10px_30px_-8px_var(--color-accent)] hover:bg-[#f0b95e] transition-colors"
+          className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent text-ink font-semibold hover:bg-[#f0b95e] transition-colors"
         >
           Get in touch <FiArrowRight />
         </Link>

@@ -3,10 +3,13 @@ import { Outlet } from 'react-router-dom';
 import StatusBar from '../StatusBar';
 import AdaptiveNav from '../navigation/AdaptiveNav';
 import AuroraBackground from '../ui/AuroraBackground';
+import Footer from './Footer';
 import { useNavigation } from '../../context/navigation';
+import { usePageviews } from '../../hooks/usePageviews';
 
 const AppLayout: React.FC = () => {
   const { isSidebar } = useNavigation();
+  usePageviews();
 
   return (
     <div className="min-h-dvh text-white font-sans overflow-x-hidden">
@@ -21,6 +24,7 @@ const AppLayout: React.FC = () => {
       >
         <div className="max-w-6xl mx-auto pb-40 md:pb-24">
           <Outlet />
+          <Footer />
         </div>
       </main>
     </div>
