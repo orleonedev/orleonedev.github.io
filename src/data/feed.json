@@ -69,6 +69,44 @@
       ]
     },
     {
+      "id": "5d354b2674",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dhF7W7Pb",
+      "excerpt": "Marco Tammaro, Oreste Leone and Alessandro AlbertiCollaborating at Scale: Developer stories from consultingWorking in consulting means jumping between many different projects, each with its own unique demands, clients, and surprises. It’s a fast-paced environment where adaptability is key and no two weeks are alike. We’ll share real-world challenges that pushed us to pause, reflect, and grow.…",
+      "date": "2025-04-16",
+      "author": {
+        "name": "Create with Swift",
+        "handle": "@create-with-swift"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQFJipsCJM9FRg/feedshare-image-high-res/B4DZY.pucuH4As-/0/1744807850823?e=1794441600&v=beta&t=s9RCG99MEd3GXQIg_1N2srVN59inLo1FYaxYpJjyaoc",
+      "tags": [
+        "Talk",
+        "Collaboration",
+        "Consulting"
+      ]
+    },
+    {
+      "id": "255861e105",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dVuhneYi",
+      "excerpt": "👾 Meet Oreste Leone, iOS Engineer whose heart beats for Game Development! He's our award-winning and inspirational guide into the exciting world of game creation. \"Hello there! I’m Oreste Leone, your friendly neighborhood iOS Engineer and Game Developer here in Naples. 👾🍕Before joining the Apple Developer Academy, I studied Computer Science at the University of Naples Federico II and got my…",
+      "note": "I’m really excited to be featured in this Alumni Story edition for my commitment to game creation. A heartfelt thanks to Apple Developer Academy @Unina Federico II for the spotlight! 🥳👾",
+      "date": "2024-01-30",
+      "author": {
+        "name": "Apple Developer Academy @Unina Federico II"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQHR7rAnhtc97g/feedshare-image-high-res/feedshare-image-high-res/0/1705592296452?e=1794441600&v=beta&t=KBwPw3F0F40s9pSP8wwbyeMm4epBP9SPUl4VDln2oRo",
+      "tags": [
+        "AppleDeveloperAcademy",
+        "Alumni",
+        "Spotlight"
+      ]
+    },
+    {
       "id": "78899dadf1",
       "kind": "article",
       "platform": "medium",
