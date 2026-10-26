@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
 import { FiArrowRight } from 'react-icons/fi';
 import profilePic from '../../assets/images/profile_pic_squared.jpg';
 import GlassCard from '../ui/GlassCard';
+import { pickSocials } from '../../data/socials';
 import { fadeUp, spring, stagger } from '../../lib/motion';
 
-const socials = [
-  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/orleonedev', label: 'LinkedIn' },
-  { icon: <FaGithub />, href: 'https://github.com/orleonedev', label: 'GitHub' },
-  { icon: <FaMedium />, href: 'https://medium.com/@orleone.dev', label: 'Medium' },
-];
+const socials = pickSocials(['linkedin', 'github', 'medium']);
 
 const stats = [
   { value: '15M+', label: 'downloads across the Lapse trilogy' },
@@ -64,11 +60,11 @@ const AboutHero: React.FC = () => (
       </motion.div>
       {socials.map((social) => (
         <motion.a
-          key={social.label}
-          href={social.href}
+          key={social.id}
+          href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={social.label}
+          aria-label={social.name}
           whileHover={{ scale: 1.08, y: -2 }}
           whileTap={{ scale: 0.92 }}
           transition={spring}

@@ -3,10 +3,12 @@
 //
 //   node scripts/feed/sync.mjs medium              pull new Medium articles from RSS
 //   node scripts/feed/sync.mjs issue <body-file>   add an item from a "Share to feed" issue form
+//   node scripts/feed/sync.mjs add                 add an item interactively (same fields as the form)
 //
-// Run by .github/workflows/feed.yml, and locally via `npm run feed:sync`.
+// `issue` is run by .github/workflows/feed.yml; locally use `npm run feed:add` / `npm run feed:sync`.
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
@@ -153,8 +155,8 @@ const parseIssueForm = (body) => {
   return fields;
 };
 
-const addFromIssue = async (bodyFile) => {
-  const f = parseIssueForm(readFileSync(bodyFile, 'utf8'));
+// `f` is keyed by the issue form's field labels — shared by the issue and interactive modes.
+const addItem = async (f) => {
   if (!f.URL) throw new Error('The URL field is required.');
 
   let url;
@@ -198,14 +200,65 @@ const addFromIssue = async (bodyFile) => {
   console.log(`${existing >= 0 ? 'Updated' : 'Added'} ${kind} from ${item.platform}: ${url}`);
 };
 
+const addFromIssue = (bodyFile) => addItem(parseIssueForm(readFileSync(bodyFile, 'utf8')));
+
+// ---------- Interactive ----------
+
+const addInteractive = async () => {
+  // Read lines through an async iterator so input is never lost, whether typed or pasted/piped.
+  const rl = createInterface({ input: process.stdin, terminal: false });
+  const lines = rl[Symbol.asyncIterator]();
+  const nextLine = async () => {
+    const { value, done } = await lines.next();
+    if (done) throw new Error('Input ended early.');
+    return value;
+  };
+  const ask = async (label, hint = '') => {
+    process.stdout.write(`${label}${hint ? ` (${hint})` : ''}: `);
+    return (await nextLine()).trim();
+  };
+  // Multi-line fields: pasted text can contain blank lines, so end with a line holding just "."
+  const askLong = async (label) => {
+    console.log(`${label} — paste the text, then a line with just "." to finish (or "." right away to skip):`);
+    const collected = [];
+    for (;;) {
+      const line = await nextLine();
+      if (line.trim() === '.') break;
+      collected.push(line);
+    }
+    return collected.join('\n').trim();
+  };
+
+  try {
+    const types = Object.keys(KINDS);
+    const f = { URL: await ask('URL') };
+    const choice = await ask('Type', types.map((t, i) => `${i + 1} ${t}`).join(', '));
+    f.Type = types[Number(choice) - 1] ?? types[0];
+    if (f.Type === 'Shared post') {
+      f['Author name'] = await ask('Author name');
+      f['Author handle'] = await ask('Author handle', 'optional');
+      f['Your note'] = await askLong('Your note');
+    }
+    f.Excerpt = await askLong('Excerpt');
+    if (f.Type === 'Article' || f.Type === 'Talk') f.Title = await ask('Title', 'optional');
+    f.Date = await ask('Date', 'YYYY-MM-DD, empty = today');
+    f.Tags = await ask('Tags', 'comma separated, optional');
+    f['Image URL'] = await ask('Image URL', 'optional, e.g. /images/photo.jpg');
+    await addItem(f);
+  } finally {
+    rl.close();
+  }
+};
+
 // ---------- main ----------
 
 const [command, arg] = process.argv.slice(2);
 try {
   if (command === 'medium') await syncMedium();
   else if (command === 'issue' && arg) await addFromIssue(arg);
+  else if (command === 'add') await addInteractive();
   else {
-    console.error('Usage: sync.mjs medium | sync.mjs issue <body-file>');
+    console.error('Usage: sync.mjs medium | sync.mjs issue <body-file> | sync.mjs add');
     process.exit(2);
   }
 } catch (err) {

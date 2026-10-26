@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "feed:sync": "node scripts/feed/sync.mjs medium"
+    "feed:sync": "node scripts/feed/sync.mjs medium",
+    "feed:add": "node scripts/feed/sync.mjs add"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

@@ -16,6 +16,59 @@
       ]
     },
     {
+      "id": "35dcd1f650",
+      "kind": "post",
+      "platform": "linkedin",
+      "source": "manual",
+      "url": "https://lnkd.in/p/d9ntEFg6",
+      "excerpt": "In the coming days, I’ll be heading back to Cupertino and San Francisco to attend the WWDC 2026. I’m excited to have the opportunity to join the event once again, back to back, especially in a year that marks the 50th anniversary of #Apple. I’m looking forward to discover what’s next for the Apple ecosystem and exchanging ideas on how emerging technologies can create value for real products and businesses.\nIf you’ll be attending, I’d love to connect with fellow developers, product owners, and digital professionals working in e-commerce and mobile apps, particularly those exploring AI-driven experiences, personalization, and other innovations shaping the future of digital commerce.\nAlways happy to grab a coffee and have a chat, see you there!",
+      "date": "2026-06-04",
+      "image": "/images/wwdc26_invite.jpeg",
+      "tags": [
+        "WWDC26",
+        "Apple Park"
+      ]
+    },
+    {
+      "id": "66745cce22",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dR8tNGCP",
+      "excerpt": "A couple of weeks ago I had the incredible opportunity to give a talk at the Create with Swift Napoli Meetup #3, together with my colleagues Marco Tammaro and Oreste Leone: “Collaborating at Scale: Developer stories from consulting”.We shared insights, real-world examples, and actionable strategies for writing scalable code, improving team workflows, and navigating fast-paced projects. Sharing…",
+      "note": "Grateful for the experience and the conversations that followed. Thanks to everyone who joined and to the Create with Swift team for making it happen, looking forward to the next one!",
+      "date": "2025-04-30",
+      "author": {
+        "name": "Alessandro Alberti",
+        "handle": "@alessandro-alberti-dev"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQEas3QJC7uDWQ/feedshare-image-high-res/B4DZaIeBfJG0As-/0/1746046300769?e=1794441600&v=beta&t=NXD7-TP1r49djhmvjGXok2N9ZF-p8wJ6w3cwy7cuQbM",
+      "tags": [
+        "Talk",
+        "Collaboration",
+        "Dev-Meetup"
+      ]
+    },
+    {
+      "id": "6f05095f5e",
+      "kind": "shared",
+      "platform": "web",
+      "source": "manual",
+      "url": "https://lnkd.in/p/dMseBW8i",
+      "excerpt": "Thank you to everyone who joined us yesterday for our Naples Meetup #3 at Spazio Tra!We were thrilled to host four amazing speakers who shared their valuable experiences and insights. The conversations, connections, and energy in the room made for an unforgettable event. ✨",
+      "date": "2025-04-18",
+      "author": {
+        "name": "Create with Swift",
+        "handle": "@create-with-swift"
+      },
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQGYgAd_Aubwww/feedshare-image-high-res/B4DZZJOMqwGgAs-/0/1744985185972?e=1794441600&v=beta&t=BQkOAjC190fiztdsmwBvUrLERFf0LTzC2wWMoG48Wi4",
+      "tags": [
+        "Dev-Meetup",
+        "Swift",
+        "Event"
+      ]
+    },
+    {
       "id": "78899dadf1",
       "kind": "article",
       "platform": "medium",

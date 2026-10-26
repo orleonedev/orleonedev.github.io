@@ -7,6 +7,7 @@ React, Tailwind CSS v4 and Framer Motion.
 npm install
 npm run dev       # local development
 npm run build     # type-check + production build
+npm run feed:add  # add a post/talk/shared link to the Insights feed (asks for each field)
 npm run feed:sync # pull new Medium articles into the Insights feed
 ```
 

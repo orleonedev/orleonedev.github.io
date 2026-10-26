@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiMail, FiArrowUpRight, FiCode, FiSearch, FiUsers } from 'react-icons/fi';
-import { FaLinkedin, FaGithub, FaMedium, FaXTwitter } from 'react-icons/fa6';
 import GlassCard from '../../components/ui/GlassCard';
+import { contactEmail, openMail } from '../../lib/contact';
 import { fadeUp, spring, stagger } from '../../lib/motion';
 
-const CONTACT_EMAIL = 'orleone.dev@gmail.com';
 const SCHEDULING_LINK = 'https://calendar.notion.so/meet/orleonedev/wa40j4obe';
 
 const services = [
@@ -14,12 +13,6 @@ const services = [
   { icon: <FiUsers />, title: 'Mentoring', text: 'Mock interviews from someone who runs real ones, code and portfolio reviews, career advice' },
 ];
 
-const socialLinks = [
-  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/orleonedev' },
-  { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com/orleonedev' },
-  { name: 'Medium', icon: <FaMedium />, url: 'https://medium.com/@orleone.dev' },
-  { name: 'X', icon: <FaXTwitter />, url: 'https://x.com/orleonx_dev' },
-];
 
 const inputClass =
   'w-full px-5 py-3.5 rounded-[18px] bg-white/[0.06] text-white placeholder:text-white/45 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.12)] focus:outline-none focus:shadow-[inset_0_0_0_1.5px_var(--color-accent)] focus:bg-white/[0.09] transition-all';
@@ -36,7 +29,7 @@ const ConnectTab: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const body = `${form.message}\n\n— ${form.name}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    openMail(form.subject, body);
   };
 
   return (
@@ -96,7 +89,9 @@ const ConnectTab: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">Write to me</h2>
           <p className="text-white/70 mb-8">
             This opens your email app with the message ready to send to{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+            <button type="button" onClick={() => openMail()} className="text-accent hover:underline">
+              {contactEmail()}
+            </button>.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -124,23 +119,6 @@ const ConnectTab: React.FC = () => {
         </GlassCard>
       </div>
 
-      <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-3">
-        {socialLinks.map((social) => (
-          <motion.a
-            key={social.name}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            transition={spring}
-            className="glass !rounded-full inline-flex items-center gap-2.5 h-12 px-5 text-white/85 hover:text-white"
-          >
-            <span className="text-lg">{social.icon}</span>
-            <span className="font-medium">{social.name}</span>
-          </motion.a>
-        ))}
-      </motion.div>
     </motion.div>
   );
 };
